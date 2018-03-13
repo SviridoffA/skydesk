@@ -1,0 +1,403 @@
+.p  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	text-align : justify;
+	text-indent : 20;
+	padding-left : 10;
+	padding-right : 10;
+	padding-top : 2;
+	padding-bottom : 2;
+	margin-left : 10;
+	margin-right : 10;
+	margin-top : 0;
+	margin-bottom : 0;
+}
+
+.table  {
+	background-color : whitesmoke;
+	color: black;
+	font-weight : normal;
+	font-size : 10px;
+	font-family : MS Sans Serif;
+}
+
+.table_1  {
+        background-color : #e0e0e0;
+        color: black;
+        font-weight : normal;
+        font-size : 10px;
+        font-family : MS Sans Serif;
+}
+
+.tablesm  {
+	background-color : whitesmoke;
+	color: black;
+	font-weight : normal;
+	font-size : 4px;
+	font-family : MS Sans Serif;
+}
+
+.leaflet  {
+	background-color : black;
+	color: white;
+/*	font-weight : normal;
+	font-size : 10px;
+	font-family : Arial Cyr;*/
+}
+
+.leafletdata  {
+	background-color : white;
+	color: black;
+	font-weight : normal;
+/*	font-size : 7px;
+	font-family : Times New Roman Cyr;*/
+	text-align: justify;
+}
+
+.text  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+/*	padding-left : 10;
+	padding-right : 10;
+	padding-top : 2;
+	padding-bottom : 2;
+	margin-left : 10;
+	margin-right : 10;*/
+	margin-top : 0;
+	margin-bottom : 0;
+}
+
+.textblack  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	margin-top : 0;
+	margin-bottom : 0;
+	color: black;
+}
+
+.input  {
+	background-color : silver;
+	font-size : 10px;
+	font-family : MS Sans Serif;
+}
+
+select {
+        font-size : 10px;
+        font-family : MS Sans Serif;
+}
+
+.default  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	background-color : silver;
+}
+
+.field  {
+	font-size : 14px;
+	font-family : MS Sans Serif;
+}
+
+.data  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	color : #000;
+	background-color : #CCC;
+	text-align : right;
+}
+
+.info  {
+        font-size : 10px;
+        font-family : MS Sans Serif;
+        color : green;
+        text-decoration : none;
+        font-weight : bold;
+}
+
+.error  {
+        font-size : 10px;
+        font-family : MS Sans Serif;
+        color : red;
+        text-decoration : none;
+        font-weight : bold;
+}
+
+
+
+.formHeader  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	color : #069;/*#56a5be;*/
+	text-align : right;
+	background-color : white;
+}
+
+.formData  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	color : #069;/*#56a5be;*/
+	background-color : white;
+}
+
+.edit  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	background-color : #f5deb3;
+	color:  #8b4513;
+	text-align: right;
+}
+
+.editData  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	background-color : #fffff0;
+	color : #8b4513;
+}
+
+.icardTable  {
+	background-color : #b0c4de;
+	font-size : 10px;
+	font-family : MS Sans Serif;
+}
+
+.icardTableHeader  {
+	font : bold 10px MS Sans Serif;
+	background-color : #d0f0ff;
+	color : #00008b;
+	text-align : center;
+}
+
+.icardTableData  {
+	font : 10px MS Sans Serif;
+	background-color : #faffff;
+	color : #00008b;
+}
+
+.menu  {
+	font : bold 10px "MS Sans Serif";
+	color : #FFFFFF;
+	text-decoration : none;
+	background-color : #006699;
+}
+
+.a  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	color : #03c;
+	text-decoration : none;
+}
+
+.ab  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	color : #03c;
+	text-decoration : none;
+	font-weight : bold;
+}
+
+.ab_red  {
+        font-size : 10px;
+        font-family : MS Sans Serif;
+        color : red;
+        text-decoration : none;
+        font-weight : bold;
+}
+
+.abg  {
+        font-size : 10px;
+        font-family : MS Sans Serif;
+        color : gray;
+        text-decoration : none;
+        font-weight : bold;
+}
+
+.abw  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	color : white;
+	text-decoration : none;
+	font-weight : bold;
+}
+
+.abr  {
+	font-size : 10px;
+	font-family : MS Sans Serif;
+	color : #d00;
+	text-decoration : none;
+	font-weight : bold;
+}
+
+.h1  {
+	font-size : 26px;
+	font-family : Arial Cyr;
+	font-weight : bold;
+}
+
+.w1  {
+	font-size : 20px;
+	font-family : Arial Cyr;
+	color : #c00;
+}
+
+.ah1  {
+	font-size : 18px;
+	font-family : MS Sans Serif;
+	font-weight : bold;
+	text-align : center;
+}
+
+.ah2  {
+	font-size : 14px;
+	font-family : MS Sans Serif;
+	font-weight : bold;
+	text-align : justify;
+	text-indent : 20;
+}
+
+.h2  {
+	font-size : 22px;
+	font-family : Arial Cyr;
+	font-weight : bold;
+}
+
+.h3  {
+	font-size : 19px;
+	font-family : Arial Cyr;
+	font-weight : bold;
+}
+.h3c  {
+	font-size : 19px;
+	font-family : Arial Cyr;
+	font-weight : bold;
+	text-align: center;
+}
+
+.errmsg  {
+	font-size : 16px;
+	font-family : Arial Cyr;
+	color : #DD0000;
+	font-weight : bold;
+}
+
+.msg  {
+	font-size : 16px;
+	font-family : Arial Cyr;
+	color : #00000;
+	font-weight : bold;
+}
+
+.ht  {
+	font-size : 18px;
+	font-family : Arial Cyr;
+	color : #ffffff;
+	background_color : #006699;
+}
+
+.am  {
+	font : bold 10px "MS Sans Serif";
+	color : #FFFFFF;
+	text-decoration : none;
+	padding : 0px 0px;
+	margin : 0px 0px;
+}
+
+.stat  {
+	font-size : 12px;
+	font-family : MS Sans Serif;
+	color : black;
+	background-color : #d5d5d5;
+	font-weight : bold;
+}
+
+.ARROWS  {
+	font : bold 10px "MS Sans Serif";
+	text-decoration : none;
+	color : yellow;
+}
+
+.YELLOW  {
+	color : yellow;
+}
+
+TD  {
+	font-family : MS Sans Serif;
+	font-size : 10px;
+}
+
+TD.SERIF  {
+	font-family : tahoma, verdana, arial, helvetica, sans-serif;
+}
+
+.HEAD1  {
+	font-family : MS Sans Serif;
+	font-size : 10px;
+	color : #FFFFFF;
+	text-align : center;
+	font-weight : bold;
+	background-color : #4682b4;
+}
+
+.HEAD2  {
+	font-size : 12px;
+	font-family : MS Sans Serif;
+	color : white;
+	background-color : #56a5be;
+	text-align : center;
+	font-weight : bold;
+}
+
+.HEAD3  {
+	color : black;
+	background-color : #e5e5e5;
+}
+
+DIV.ERROR  {
+	color : green;
+}
+
+DIV.REDERROR  {
+	color : red;
+}
+
+.BLUE  {
+	color : #6080C0;
+}
+
+.RED  {
+	color : red;
+}
+
+.naklbook  {
+	font-size : 6px;
+	background-color : white;
+}
+.nakl  {
+	font-size : 6px;
+	background-color : black;
+}
+
+.naklform  {
+	font-size:7pt;
+	background-color : white;
+}
+
+.err_1 {
+        font-size : 10px;
+        font-family : MS Sans Serif;
+        padding-left : 20;
+        padding-right : 20;
+	padding-top : 0;
+	padding-bottom : 0;
+        margin-left : 20;
+        margin-right : 20;
+	margin-top : 2;
+	margin-bottom : 5;
+}
+
+.text2  {
+        font-size : 10px;
+        font-family : MS Sans Serif;
+        margin-top : 0;
+        margin-bottom : 0;
+	line-height : 15px;
+}
+

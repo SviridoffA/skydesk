@@ -1,0 +1,26 @@
+
+#snmpset -c rwtenretni -v 2c 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.3.0 i 4
+#snmpset -c rwtenretni -v 2c 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.3.0 i 4
+
+
+# Setting filetype (2: config) 
+  echo  "Filetype snmpset -v2c -c rwtenretni $ip 1.3.6.1.4.1.259.6.10.94.1.24.1.5.0 i 2\n"; 
+snmpset -v2c -c rwtenretni 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.5.0 i 2 
+# Update Source type (2: runningCfg) 
+  echo "Source type snmpset -v2c -c rwtenretni $ip 1.3.6.1.4.1.259.6.10.94.1.24.1.1.0 i 2\n"; 
+snmpset -v2c -c rwtenretni 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.1.0 i 2
+# SrcFileName 
+  echo  "SrcFileName snmpset -v2c -c rwtenretni $ip 1.3.6.1.4.1.259.6.10.94.1.24.1.2.0 s start\n"; 
+#snmpset -v2c -c rwtenretni 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.2.0 s start 
+# Dst Type (4: tftp) 
+  echo "DstType snmpset -v2c -c rwtenretni $ip 1.3.6.1.4.1.259.6.10.94.1.24.1.3.0 i 4\n"; 
+snmpset -v2c -c rwtenretni 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.3.0 i 4
+# TftpServer    
+  echo "TFTP Server snmpset -v2c -c rwtenretni $ip 1.3.6.1.4.1.259.6.10.94.1.24.1.6.0 a $tftp_host \n"; 
+snmpset -v2c -c rwtenretni 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.6.0 a 10.90.90.4 
+#DestFileName    
+  echo "DestFileName snmpset -v2c -c rwtenretni $ip 1.3.6.1.4.1.259.6.10.94.1.24.1.4.0 s $name\n"; 
+snmpset -v2c -c rwtenretni 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.4.0 s 90.31 
+#Start CopyAction 
+  echo  "start copy action snmpset -v2c -c rwtenretni $ip 1.3.6.1.4.1.259.6.10.94.1.24.1.8.0 i 2\n"; 
+snmpset -v2c -c rwtenretni 10.90.90.31 1.3.6.1.4.1.259.6.10.94.1.24.1.8.0 i 2

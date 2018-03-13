@@ -1,0 +1,45 @@
+<?php
+function ipmac($mac) {
+  $query="select * from ipmac where mac like '$mac' order by cdate desc";
+  $ip="";
+  $res=mysql("mvs",$query);
+  $nn=mysql_num_rows($res);
+  if ($nn > 0)  $ip=mysql_result($res,0,"ip");
+  return($ip);
+}
+
+function ipuser($ip) {
+  $query="select * from ipuser where ip like '$ip' order by edate desc";
+//  echo $query."\n";
+  $res=mysql("mvs",$query);
+  $nn=mysql_num_rows($res);
+  $username="";
+  if ($nn > 0) $username=mysql_result($res,0,"username");
+  return($username);
+
+}
+mysql_connect("195.72.157.242","root","htvjyn");
+$str="0016.363d.c865(176):  1575 packets, 266162 bytes, last: 132ms ago";
+
+$pattern="/([abcdef0-9]{2})([abcdef0-9]{2})\.([abcdef0-9]{2})([abcdef0-9]{2})\.([abcdef0-9]{2})([abcdef0-9]{2})\(([ \d]+)\):  ([\d]+) packets, ([\d]+)[M]? bytes, last: ([\d]+)ms ago/";
+
+
+$cmd="rsh 195.72.157.254 show int GigabitEthernet0/1 mac-account";
+$pp=popen($cmd,"r");
+while (!feof($pp)) {
+  $username="";
+  $mac="";
+  $str=fgets($pp,1024);
+  preg_match_all($pattern,$str,$mem);
+//  var_dump($mem);
+  $mac=$mem[1][0].":".$mem[2][0].":".$mem[3][0].":".$mem[4][0].":".$mem[5][0].":".$mem[6][0];
+  $ago=sprintf("%d",$mem[10][0]/1000);
+  echo $str;
+  if (strlen($mac) > 10)  {
+    $ip=ipmac($mac);
+    if (!empty($ip)) $username=ipuser($ip);
+    echo "$mac $ago $ip $username\n";
+  }
+
+}
+?>

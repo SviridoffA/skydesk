@@ -1,0 +1,1 @@
+select coordinates from __dom_list;

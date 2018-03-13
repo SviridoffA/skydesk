@@ -1,0 +1,1 @@
+select users_last.* from users_last,users,bills where bills.uid=users.uid and bills.deposit >0 and users.disable=0 and users_last.uid=users.uid and users_last.last like '0000-00-00 00:00:00' 

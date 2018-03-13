@@ -1,0 +1,33 @@
+<?php
+include('building.inc.php');
+include('box.inc.php');
+include('optic_cable.inc.php');
+
+mysql_connect("195.72.157.253","krasnet","openfree");
+$ext=$_GET['ext'];
+$opticboxid=$_GET['opticboxid'];
+$a=new optic_cable($ext,$opticboxid);
+echo "<pre>";
+$a->show_opticbox();
+var_dump($a->opticbox);
+echo "</pre>";
+
+echo "<table>";
+for ($i=0;$i<$num;$i++) {
+   $colornum=mysql_result($res,$i,"color.colornum"); 
+   $color=mysql_result($res,$i,"color.color"); 
+   $typecolor=mysql_result($res,$i,"color.typecolor"); 
+   echo "<tr><td>$color</td><td><font
+color=$color><b>$colornum</b></font>($colornum)</td><td>
+   <select name=$i$colornum>
+     <option value=\"Free\">Free</option>
+     <option value=\"Pigtail\">Pigtail</option>
+     <option value=\"Adaptor\">Adaptor</option>
+     <option value=\"Splice\">Splice</option>
+   </select></tr>";
+   
+}
+echo "</table>";
+
+
+?>

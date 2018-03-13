@@ -1,0 +1,217 @@
+tcp:
+	19700406 packets sent
+		13880888 data packets (3227577132 bytes)
+		219955 data packets (247009748 bytes) retransmitted
+		8602 data packets unnecessarily retransmitted
+		32 resends initiated by MTU discovery
+		4655410 ack-only packets (454271 delayed)
+		0 URG only packets
+		874 window probe packets
+		423401 window update packets
+		520028 control packets
+	18789976 packets received
+		10488737 acks (for 3040153270 bytes)
+		1393340 duplicate acks
+		678435 acks for unsent data
+		6305441 packets (474731889 bytes) received in-sequence
+		1056226 completely duplicate packets (20718534 bytes)
+		539 old duplicate packets
+		784 packets with some dup. data (422030 bytes duped)
+		407688 out-of-order packets (542683732 bytes)
+		5930 packets (11582 bytes) of data after window
+		358 window probes
+		118563 window update packets
+		15841 packets received after close
+		578 discarded for bad checksums
+		0 discarded for bad header offset fields
+		0 discarded because packet too short
+	149952 connection requests
+	308175 connection accepts
+	5563 bad connection attempts
+	0 listen queue overflows
+	1805 ignored RSTs in the windows
+	446091 connections established (including accepts)
+	467920 connections closed (including 52906 drops)
+		261390 connections updated cached RTT on close
+		263384 connections updated cached RTT variance on close
+		189004 connections updated cached ssthresh on close
+	11862 embryonic connections dropped
+	8995390 segments updated rtt (of 6486761 attempts)
+	175729 retransmit timeouts
+		2567 connections dropped by rexmit timeout
+	1030 persist timeouts
+		1 connection dropped by persist timeout
+	1854 keepalive timeouts
+		276 keepalive probes sent
+		1578 connections dropped by keepalive
+	3033852 correct ACK header predictions
+	5006415 correct data packet header predictions
+	312903 syncache entries added
+		15856 retransmitted
+		12053 dupsyn
+		18 dropped
+		308175 completed
+		85 bucket overflow
+		0 cache overflow
+		1835 reset
+		2806 stale
+		0 aborted
+		0 badack
+		25 unreach
+		0 zone failures
+	0 cookies sent
+	23 cookies received
+	51516 SACK recovery episodes
+	114337 segment rexmits in SACK recovery episodes
+	151695968 byte rexmits in SACK recovery episodes
+	839045 SACK options (SACK blocks) received
+	113419 SACK options (SACK blocks) sent
+udp:
+	3449339 datagrams received
+	0 with incomplete header
+	0 with bad data length field
+	1 with bad checksum
+	27319 with no checksum
+	152409 dropped due to no socket
+	1221557 broadcast/multicast datagrams dropped due to no socket
+	176 dropped due to full socket buffers
+	0 not for hashed pcb
+	2075196 delivered
+	2098681 datagrams output
+ip:
+	529306371 total packets received
+	599 bad header checksums
+	0 with size smaller than minimum
+	0 with data size < data length
+	0 with ip length > max ip packet size
+	0 with header length < data size
+	0 with data length < header length
+	0 with bad options
+	0 with incorrect version number
+	33126 fragments received
+	630 fragments dropped (dup or out of space)
+	309 fragments dropped after timeout
+	16074 packets reassembled ok
+	109442387 packets for this host
+	14588 packets for unknown/unsupported protocol
+	305106642 packets forwarded (0 packets fast forwarded)
+	1996575 packets not forwardable
+	29082 packets received for unknown multicast group
+	3349 redirects sent
+	229367872 packets sent from this host
+	371399 packets sent with fabricated ip header
+	42848 output packets dropped due to no bufs, etc.
+	34 output packets discarded due to no route
+	523921 output datagrams fragmented
+	1047881 fragments created
+	11103 datagrams that can't be fragmented
+	0 tunneling packets that can't find gif
+	55 datagrams with bad address in header
+icmp:
+	607949 calls to icmp_error
+	16804 errors not generated in response to an icmp message
+	Output histogram:
+		echo reply: 547700
+		destination unreachable: 168309
+		routing redirect: 3349
+		time exceeded: 422830
+	0 messages with bad code fields
+	0 messages < minimum length
+	49 bad checksums
+	1 message with bad length
+	16 multicast echo requests ignored
+	0 multicast timestamp requests ignored
+	Input histogram:
+		echo reply: 1412620
+		destination unreachable: 21908
+		source quench: 94
+		routing redirect: 1344
+		echo: 547716
+		time exceeded: 11404
+	547700 message responses generated
+	10 invalid return addresses
+	19 no return routes
+	ICMP address mask responses are disabled
+igmp:
+	0 messages received
+	0 messages received with too few bytes
+	0 messages received with bad checksum
+	0 membership queries received
+	0 membership queries received with invalid field(s)
+	0 membership reports received
+	0 membership reports received with invalid field(s)
+	0 membership reports received for groups to which we belong
+	0 membership reports sent
+ip6:
+	3 total packets received
+	0 with size smaller than minimum
+	0 with data size < data length
+	0 with bad options
+	0 with incorrect version number
+	0 fragments received
+	0 fragments dropped (dup or out of space)
+	0 fragments dropped after timeout
+	0 fragments that exceeded limit
+	0 packets reassembled ok
+	0 packets for this host
+	0 packets forwarded
+	3 packets not forwardable
+	0 redirects sent
+	52 packets sent from this host
+	0 packets sent with fabricated ip header
+	0 output packets dropped due to no bufs, etc.
+	0 output packets discarded due to no route
+	0 output datagrams fragmented
+	0 fragments created
+	0 datagrams that can't be fragmented
+	0 packets that violated scope rules
+	3 multicast packets which we don't join
+	Input histogram:
+		hop by hop: 2
+		ICMP6: 1
+	Mbuf statistics:
+		0 one mbuf
+		3 one ext mbuf
+		0 two or more ext mbuf
+	0 packets whose headers are not continuous
+	0 tunneling packets that can't find gif
+	0 packets discarded because of too many headers
+	0 failures of source address selection
+	0 forward cache hit
+	0 forward cache miss
+	Source addresses selection rule applied:
+icmp6:
+	0 calls to icmp6_error
+	0 errors not generated in response to an icmp6 message
+	0 errors not generated because of rate limitation
+	Output histogram:
+		multicast listener report: 45
+		multicast listener done: 3
+		neighbor solicitation: 4
+	0 messages with bad code fields
+	0 messages < minimum length
+	0 bad checksums
+	0 messages with bad length
+	Histogram of error messages to be generated:
+		0 no route
+		0 administratively prohibited
+		0 beyond scope
+		0 address unreachable
+		0 port unreachable
+		0 packet too big
+		0 time exceed transit
+		0 time exceed reassembly
+		0 erroneous header field
+		0 unrecognized next header
+		0 unrecognized option
+		0 redirect
+		0 unknown
+	0 message responses generated
+	0 messages with too many ND options
+	0 messages with bad ND options
+	0 bad neighbor solicitation messages
+	0 bad neighbor advertisement messages
+	0 bad router solicitation messages
+	0 bad router advertisement messages
+	0 bad redirect messages
+	0 path MTU changes

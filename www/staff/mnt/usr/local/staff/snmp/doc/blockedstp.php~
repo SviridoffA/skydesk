@@ -1,0 +1,8 @@
+<?php
+include('groupswitch.php');
+include('switch.php');
+mysql_connect("195.72.157.242","root","htvjyn");
+
+ $a = new groupswitch();
+ $a->stp_all_switch();
+?>

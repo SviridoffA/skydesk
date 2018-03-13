@@ -1,0 +1,10 @@
+  function cfg_mrtg_port_all($ip,$community) {
+    $port=$this->ports($ip);
+    $num=count($port);
+    for ($i=0;$i<$num;$i++) {
+      $index=$port[$i];
+      $index=ereg_replace("INTEGER: ","",$index);
+      $cfg=$cfg.$this->cfg_mrtg_port($ip,$index,"tenretni");
+    }
+    return($cfg);
+  }

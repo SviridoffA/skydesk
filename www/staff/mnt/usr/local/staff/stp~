@@ -1,0 +1,21 @@
+#!/usr/local/bin/php -q
+<?php
+if ($argc < 2 ) {
+ echo "stp xx.xx.xx.xx\n";
+ exit;
+}
+$ip=$argv[1];
+$cmd="/usr/local/bin/snmpwalk -v 1 -c tenretni $ip 1.3.6.1.2.1.17.2.15.1.3";
+$pp=popen($cmd,"r");
+while (!feof($pp)) {
+  $str=fgets($pp,1024);
+  $str=ereg_replace("SNMPv2-SMI::mib-2.17.2.15.1.3.","",$str);
+  $str=trim(ereg_replace("= INTEGER: ","",$str));
+  if (!empty($str))  {
+    $mem=explode(" ",$str);
+    $ft=snmpget($ip,"tenretni","1.3.6.1.2.1.17.2.15.1.10.".$mem[0]);
+    $ft=ereg_replace("Counter32: ","",$ft);
+    echo "$str ($ft)\n";
+  }
+}
+?>

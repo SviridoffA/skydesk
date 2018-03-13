@@ -1,0 +1,4 @@
+      $uu=mac_users($mac);
+      $username=$uu['id'];
+      $types=$uu['types'];
+      $uid=$uu['uid'];

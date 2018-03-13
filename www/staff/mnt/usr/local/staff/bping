@@ -1,0 +1,96 @@
+#!/usr/local/bin/php -q
+<?php
+
+/*
+  bping (c) 23 Oct 2006
+*/
+
+/*====================[ DEFAULTS  ]=======================*/
+
+$help = "
+
+Description:
+  'bping' is used to check all the targets (IP-addresses) associated with the defined BUILD_ID.
+  It uses 'arping' to ping every IP-address with 20 packets (by default) and prints results
+  to standart output.
+
+Usage:
+  bping [-i INTERFACE] [-c PACKETS] BUILD_ID
+
+Defaults:
+  INTERFACE = fxp0;
+  PACKETS   = 20;
+
+";
+
+$iface = "fxp0";
+$pckts = 20;
+$bid   = "";
+
+/*====================[ DEFAULTS  ]=======================*/
+
+/*====================[ FUNCTIONS ]=======================*/
+
+/* ---------  MY_PINGER  ---------- */
+function my_pinger($iface, $pckts, $buildid){
+
+/* Get target IP-addresses */
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+$query="SELECT customers.ip, customers.username, customers.address FROM dogovor, customers WHERE dogovor.buildid = '$buildid' AND dogovor.domen = customers.username;";
+$res=mysql("mvs",$query);
+echo mysql_error();
+$k=0;
+while ($row = mysql_fetch_assoc($res)) {
+    $iplist[$k]["ip"]=$row["ip"];
+    $iplist[$k]["login"]=$row["username"];
+    $iplist[$k]["address"]=$row["address"];
+    $k++;
+}
+/* Get target IP-addresses */
+
+for ($j=0; $j<count($iplist); $j++){
+    $ip=$iplist[$j]["ip"];
+    echo "\n".$iplist[$j]["login"]." --> ".$iplist[$j]["address"]." --> ".$ip." --> ";
+
+    /* Execute ARPING */
+    $res = `arping -i $iface -c $pckts $ip | grep packets`;
+    /* Execute ARPING */
+
+    /* Parse arping's work results */
+    $subject =$res ; 
+    $pattern = '/(\d+)% unanswered$/i'; 
+    preg_match($pattern, $subject, $matches);
+    $loss = $matches[1];
+    if ($loss==100) {$status="DOWN";} else if ($loss==0) {$status="OK";} else {$status="UNSTABLE";}
+    /* Parse arping's work results */
+
+    /* Make user-friendly output here */
+    echo "$status ($loss% loss)\n";
+    /* Make user-friendly output here */
+}
+echo "\n\n";
+}
+/* ---------  MY_PINGER  ---------- */
+/* ---------  IS_DIGIT   ---------- */
+function is_digit($arg){if (preg_match("/^\d+$/",$arg)){return true;}else{return false;}}
+/* ---------  IS_DIGIT   ---------- */
+/* ---------  CHECK_ARGS  --------- */
+function check_args(&$i, &$p, &$b, &$av, &$ac){
+    for ($j=1; $j<$ac; $j++){
+	if (preg_match("/-i/",$av[$j])){$i=$av[$j+1];}
+	if (preg_match("/-c/",$av[$j])){$p=$av[$j+1];}
+    }
+    $b=$av[$ac-1];
+    return is_digit($p) and is_digit($b);
+}
+/* ---------  CHECK_ARGS  --------- */
+/*====================[ FUNCTIONS ]=======================*/
+
+/*====================[   BEGIN   ]=======================*/
+
+if ($argc<2){die($help);}
+if ($argc==2){if(is_digit($argv[1])){my_pinger($iface, $pckts, $argv[1]);}else{die($help);}}
+if ($argc>2){if(check_args($iface, $pckts, $bid, $argv, $argc)){my_pinger($iface, $pckts, $bid);}else{die($help);}}
+
+/*====================[    END    ]=======================*/
+?>

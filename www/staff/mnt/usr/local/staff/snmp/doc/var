@@ -1,0 +1,12 @@
+   function rem($vars) {
+/*
+ OID
+ STRING
+ Timeticks
+ INTEGER
+ Gauge32
+ Counter32
+ IpAddress
+ Counter64
+*/
+   }

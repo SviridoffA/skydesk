@@ -1,0 +1,15 @@
+#!/usr/local/bin/php -q
+<?php
+
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/radiusdb.inc');
+include("/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc");
+$user=$argv[1];
+$operator=`set | grep USER | sed s'/USER=//'`;
+$operator=trim($operator);
+// echo "operator=$operator\n";
+if ($argc < 2) {
+  echo "usage: radmlast <user>\n";
+  exit;
+}
+radmlast($user);
+?>

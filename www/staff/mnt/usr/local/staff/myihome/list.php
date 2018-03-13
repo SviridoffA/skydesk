@@ -1,0 +1,18 @@
+<?php
+$fp=fopen("2.htm","r");
+while (!feof($fp)) {
+  $str=$str.fgets($fp,1024);
+}
+$mem=explode("|",$str);
+//var_dump($mem);
+$num=count($mem)-1;
+$total=($num)/4;
+echo "num=$num total=$total";
+for ($i=0;$i < $total;$i++) {
+  $films[$i][0]=$i+1;
+  $films[$i][1]=trim($mem[$i*4]);
+  $films[$i][2]=$mem[$i*4+3];
+  
+}
+var_dump($films);
+?>

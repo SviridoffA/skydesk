@@ -1,0 +1,20 @@
+#!/usr/local/bin/php -q
+<?php
+#include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+mysql_connect("195.72.157.253","radius","195");
+$query="select users.*,dogovor.* from users,dogovor where dogovor.domen=users.username order by users.interface";
+$res=mysql("mvs",$query);
+$num=mysql_num_rows($res);
+echo mysql_error();
+for ($i=0;$i < $num;$i++) {
+  $user=mysql_result($res,$i,"username");
+  $tty=mysql_result($res,$i,"tty");
+  $date=mysql_result($res,$i,"dateStart");
+  $access=mysql_result($res,$i,"access");
+  $address=mysql_result($res,$i,"address");
+  $mvsip=mysql_result($res,$i,"mvsip");
+  $interface=mysql_result($res,$i,"interface");
+  echo sprintf("%12s %8s %6s %15s %10s %15s %15s\n",$user,$tty,$interface,$date,$access,$mvsip,$address);
+}
+echo "$num users\n";
+?>

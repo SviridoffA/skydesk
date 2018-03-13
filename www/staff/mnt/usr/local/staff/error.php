@@ -1,0 +1,11 @@
+#!/usr/local/bin/php5 -q
+<?php
+include('/usr/local/staff/snmp/doc/groupswitch.php');
+include('/usr/local/staff/snmp/doc/switch.php');
+//mysql_connect("195.72.157.242","root","htvjyn");
+include("/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc");
+// mysql_connect("195.72.156.142","root","htvjyn");
+
+ $a = new groupswitch();
+ $a->error_all_switch();
+?>

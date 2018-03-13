@@ -1,0 +1,32 @@
+
+*** These modified files were found in JOE when it aborted on Tue Dec  1 16:23:11 2015
+*** JOE was aborted because the terminal closed
+
+*** Файл 'count.php'
+<?php
+mysql_connect("91.223.48.25","root","");
+$query="
+
+?>
+*** Файл '(БезИмени)'
+Incom
+Incom
+calc
+tc
+calc
+
+*** Файл '(БезИмени)'
+192.168.10.txt
+index2.php
+swich.php
+switch.php
+users.php
+list.php
+function.inc
+index.php
+index1.php
+index1.php
+count.php
+
+*** These modified files were found in JOE when it aborted on Wed Dec 16 05:33:00 2015
+*** JOE was aborted because the terminal closed

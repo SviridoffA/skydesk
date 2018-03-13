@@ -1,0 +1,89 @@
+<?php
+include("/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc");
+function adr($address) {
+  $str=ereg_replace(" ","_",$address);
+  return($str);
+}
+
+
+function host($name,$ip) {
+$str="
+define host{
+	use			generic-host		; Name of host template to use
+
+	host_name		$name
+	alias			$name
+	address			$ip
+	parents			statmvs
+	check_command		check-host-alive
+	max_check_attempts	10
+	notification_interval	120
+	notification_period	workhours
+	notification_options	d,u,r
+        contact_groups		admins
+	}
+";
+  return($str);
+}
+
+
+
+
+function service($name) {
+$str="
+define service{
+	use				generic-service		; Name of service template to use
+
+	host_name			$name
+	service_description		PING
+	is_volatile			0
+	check_period			24x7
+	max_check_attempts		3
+	normal_check_interval		5
+	retry_check_interval		1
+	contact_groups			admins
+	notification_interval		240
+	notification_period		workhours
+	notification_options		c,r
+	check_command			check_ping!100.0,20%!500.0,60%
+	}
+";
+
+    return($str);
+}
+
+function hostgroup($hosts) {
+
+$str="define hostgroup{
+	hostgroup_name	equipment
+	alias		equipment
+        members		$hosts
+}
+";
+  return($str);
+} 
+
+function names($ip,$address) {
+  $ip=ereg_replace(".100","",$ip);
+  $ip=ereg_replace("10.","",$ip);
+  $str=adr($address)."-".$ip;
+  return($str);
+}
+
+$query="select * from switch where status=1 order by address";
+$res=mysql("mvs",$query);
+$num=mysql_num_rows($res);
+for ($i=0;$i<$num;$i++) {
+  $ip=mysql_result($res,$i,"ip");
+  $address=mysql_result($res,$i,"address");
+  $name=names($ip,$address);
+  echo host($name,$ip);
+  echo service($name);
+  if ($i==0) {
+    $str=$name;
+  } else {
+    $str=$str.",".name;
+  }
+}
+echo hostgroup($str);
+?>

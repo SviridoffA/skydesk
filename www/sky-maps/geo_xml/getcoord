@@ -1,0 +1,1 @@
+mysql -A --user=root -p zabbix sky_switch < querycoord;

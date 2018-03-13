@@ -1,0 +1,74 @@
+#!/usr/local/bin/php -q
+<?php
+
+function write_log($username, $summa,$sdate) {
+
+  $ip=`set | grep USER | sed s'/USER=//'`;
+  $ip=trim($ip);
+  $dogid=mysql_result(mysql("mvs","select `dogovor` from `customers` where `username` like '$username'"),0,"dogovor");
+  $query="insert into `logs` values('','$ip','$username','$dogid',now(),'$sdate','Insert $ip payment $summa')";
+  $res=mysql("mvs",$query);
+//  echo $query;
+  echo mysql_error();
+
+}
+
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/function.inc');
+include("/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc");
+$user=$argv[1];
+$summa=$argv[2];
+$sdate=$argv[3];
+$fromp=$argv[4];
+$operator=`set | grep USER | sed s'/USER=//'`;
+$operator=trim($operator);
+// echo "operator=$operator\n";
+if (empty($fromp)) $fromp=1;
+if (empty($sdate)) $sdate=date("Y-m-d");
+if ($argc < 5) {
+  echo "usage: payment <user> <summa> [sdate] [fromp]\n";
+  exit;
+}
+$query="select * from customers where username like '$user'";
+$res=mysql("mvs",$query);
+$num=mysql_num_rows($res);
+if ($num == 0) {
+  echo "user $user not found\n";
+  echo "payment not inserted\n";
+  exit;
+}
+
+$query="select * from summary where username like '$user' order by sdate desc";
+$res=mysql("mvs",$query);
+$num=mysql_num_rows($res);
+if ($num) {
+  $dogid=mysql_result($res,0,"dogid");
+  $query="select * from payment where username like '$user' and date like '$sdate' and summa=$summa";
+//  echo $query."\n";
+  $res1=mysql("mvs",$query);
+  $nn=mysql_num_rows($res1);
+  if ($nn > 0) {
+    echo "Payment already inserted\n";
+    exit;
+  }
+  $query="insert into payment(dogid,username,date,summa,fromp,date_enter,operator) values($dogid,'$user','$sdate',$summa,$fromp,now(),'$operator')";
+//  echo $query;
+  write_log($user, $summa,$sdate);
+  $res=mysql("mvs",$query);
+/*
+  $query="select * from customers where username like '$user'";
+  $res=mysql("mvs",$query);
+  $dateStop=mysql_result($res,0,"dateStop");
+  $access=mysql_result($res,0,"access");
+  echo "$user $access $dateStop\n\n";
+*/
+  $query="select * from payment where username like '$user' and date like '$sdate' and summa=$summa";
+  $ures=mysql("mvs",$query);
+  $num=mysql_num_rows($ures);
+  if ($num > 0) {
+    echo "payment sucsefull inserted to user $user\n";
+  } else {
+    echo "payment not inserted to user $user\n";
+  }
+  balans($user);
+}
+?>

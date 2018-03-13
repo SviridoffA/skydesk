@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/sbin/ntpdate 195.58.224.34

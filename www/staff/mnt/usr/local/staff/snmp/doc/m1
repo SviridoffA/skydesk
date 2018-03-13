@@ -1,0 +1,42 @@
+Target[loadcpu]: 1.3.6.1.4.1.9.2.1.58.0&1.3.6.1.4.1.9.2.1.58.0:public@195.72.157.254
+YLegend[loadcpu]: Percent
+Options[loadcpu]: gauge,growright
+MaxBytes[loadcpu]: 100
+Title[loadcpu]: Load CPU -- router.mvs.net.ua
+
+Target[7201mem]: 1.3.6.1.4.1.9.9.48.1.1.1.5.1&1.3.6.1.4.1.9.9.48.1.1.1.6.1:public@195.72.157.254
+YLegend[7201mem]: Percent
+Options[7201mem]: gauge,growright
+MaxBytes[7201mem]: 849328708
+LegendI[7201mem]: Used mem
+LegendO[7201mem]: Free mem
+Title[7201mem]: Load CPU -- router.mvs.net.ua
+
+Target[3560mem]: 1.3.6.1.4.1.9.9.48.1.1.1.5.1&1.3.6.1.4.1.9.9.48.1.1.1.6.1:public@195.72.157.254
+YLegend[3560mem]: Percent
+LegendI[3560mem]: Used mem
+LegendO[3560mem]: Free mem
+Options[3560mem]: gauge,growright
+MaxBytes[3560mem]: 93686908
+Title[3560mem]: Load CPU -- router.mvs.net.ua
+
+Target[loadcpu3560]: 1.3.6.1.4.1.9.2.1.58.0&1.3.6.1.4.1.9.2.1.58.0:public@195.72.157.250
+YLegend[loadcpu3560]: Percent
+Options[loadcpu3560]: gauge,growright
+MaxBytes[loadcpu3560]: 100
+Title[loadcpu3560]: Load CPU -- router.mvs.net.ua
+
+
+
+Target[users]: 1.3.6.1.4.1.9.10.24.1.1.4.1.2.3&1.3.6.1.4.1.9.10.24.1.1.4.1.2.3:public@195.72.157.254
+Options[users]: Gauge,growright
+YLegend[users]: Numbers
+MaxBytes[users]: 655
+Title[users]: Current users on the PPTP
+
+Target[users1]: .1.3.6.1.4.1.9.10.24.1.1.4.1.3.3&1.3.6.1.4.1.9.10.24.1.1.4.1.3.3:public@195.72.157.254
+Options[users1]: Gauge,growright
+YLegend[users1]: Numbers
+MaxBytes[users1]: 655
+Title[users1]: Current users on the PPTP
+

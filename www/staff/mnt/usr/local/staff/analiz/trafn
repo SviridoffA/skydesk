@@ -1,0 +1,131 @@
+#!/usr/local/bin/php -q
+<?php
+include("/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc");
+// /bin/ls -l /var/ipa |/usr/bin/grep ^d|/usr/bin/cut -d " " -f 13
+$cmd="/bin/ls -l /var/ipa |/usr/bin/grep ^d|/usr/bin/cut -c 51-70 | /usr/bin/grep -v _in$ | /usr/bin/grep -v _out | /usr/bin/grep -v _chat | /usr/bin/grep -v _game";
+// $cmd="/bin/ls -L /var/ipa | /usr/bin/grep -v _in$ | /usr/bin/grep -v _out | /usr/bin/grep -v _chat | /usr/bin/grep -v _game";
+// echo $cmd;
+// exit;
+$pp=popen($cmd,"r");
+if ($argc > 1) {
+  $d=$argv[1];
+} else {
+  $d=date("Y.m.d");
+}
+while (!feof($pp)) {
+  $str=fgets($pp,2048);
+  $users=trim($str);
+  if ($users) {
+    $cmds="/usr/local/bin/ipastat -i $d -n -e -r $users";
+//    echo $cmds;
+    $fp=popen($cmds,"r");
+    $bytes=0;
+    while (!feof($fp)) {
+      $sts=fgets($fp,2048);
+//    echo $sts;
+      $mem=explode(" ",$sts);
+      $num=count($mem);
+      switch ($num) {
+        case 3:
+          $bytes=$bytes+$mem[1];
+          break;
+        case 2:
+//        $bytes=$bytes/1024;
+          if ($bytes == 0) {
+/*
+          $query="select * from unactive where username like '$users'";
+          $res=mysql("mvs",$query);
+          $ns=mysql_num_rows($res);
+          if ($ns > 0) {
+          } else {
+            $query="select * from customers where username like '$users'";
+            $res=mysql("mvs",$query);
+            $cn=mysql_num_rows($res);
+            if ($cn > 0) {
+              $st="legal";
+            } else {
+              $st="unknown";
+            }        
+            $query="select * from sessions where username like '$users' order by dateEnd desc";
+            $res=mysql("mvs",$query);
+            $tp=mysql_num_rows($res);
+            if ($tp > 0) {
+              $ds=mysql_result($res,0,"dateEnd");
+            } else {
+              $ds="0000-00-00";
+            }
+            $query="insert into unactive(username,date,status) values ('$users','$ds','$st')";
+            $res=mysql("mvs",$query);
+          }
+*/ 
+          }
+          if ($bytes > 0) {
+            switch ($users) {
+              case "rpstud":
+                $staff=$staff+$bytes;
+                break;
+              case "nerly":
+                $staff=$staff+$bytes;
+                break;
+              case "sl_day":
+                $staff=$staff+$bytes;
+                break;
+              case "ma":
+                $staff=$staff+$bytes;
+                break;
+              case "sl_night":
+                $staff=$staff+$bytes;
+                break;
+                $staff=$staff+$bytes;
+                break;
+              case "sl":
+                $staff=$staff+$bytes;
+                break;
+              case "maraby":
+                $staff=$staff+$bytes;
+                break;
+              case "http":
+                $staff=$staff+$bytes;
+                break;
+              case "wb":
+                $unlim=$unlim+$bytes;
+                break;
+              case "marinet":
+                $unlim=$unlim+$bytes;
+                break;
+              case "tillo":
+                $unlim=$unlim+$bytes;
+                break;
+              case "med1":
+                $unlim=$unlim+$bytes;
+                break;
+              case "med2":
+                $unlim=$unlim+$bytes;
+                break;
+              case "mendel":
+                $unlim=$unlim+$bytes;
+                break;
+              case "tusin":
+                $unlim=$unlim+$bytes;
+                break;
+              default:
+                $add++;
+                $summ=$summ +$bytes;
+                echo sprintf("%s %d\n",$users, $bytes/1024);
+            }
+          }
+          break;
+        default:
+          break;
+      }
+
+    }
+  }
+}
+$summ=$summ/1024/1024;
+$unlim=$unlim/1024/1024;
+$staff=$staff/1024/1024;
+echo "staff: $staff\n";
+echo "unlim: $unlim\n";
+echo "total($add): $summ\n";
+?>

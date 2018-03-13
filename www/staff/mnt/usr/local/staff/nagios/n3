@@ -1,0 +1,5 @@
+define hostgroup{
+	hostgroup_name	switches
+	alias		switches
+        members		Mitropoliskaya4-90.42,Lenina5-90.41,Xmelnickogo37-9.7,Lenina82-31.1,Xmelnickogo31-9.5.200,Italyanskaya116-34.3,Stroiteley84-75,Lenina10/20-23.1,Lenina24-21.1,Lenina1-28.2,Lenina93-83,Lenina97-57,Lenina49-18.3,Mitropolitskaya53-90.99,Artema58-35.3,Varganova5-33.2,Naximova178-53,Lenina94-9.10,Lenina96-79,Lenina90-40.4.30,Lenina90-52,Lenina104-76,Naximova154-131,Xmelnickogo2-135,lavitskogo10-130,Zelinskogo21-77,Zelinskogo13-55,Zelinskogo21-77,Lenina87a-54,Lenina42-19.2,Lenina62-17.2,Naximova99-89.99,Lenina105-93,Apatova140-200,Artema82-39.4,Artema56-52.4,Bahchivandgi14-78,Artema48-15.2,Shevchenko91-43.1,Lenina74-90.31,Lenina74-90.33,Nikolaevskaya80-15.6,Metallurgov43-80.3,Metallurgov84-37.1,Metallurgov67-38.1.150,Metallurgov79-41.3,Metallurgov56-50.6,Shevchenko64-42.4,Metallurgov113-44.8
+}

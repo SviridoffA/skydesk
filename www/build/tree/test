@@ -1,0 +1,23 @@
+function test_optic($build) {
+  $dd=0;
+  $query="select * from optica where buildid=$build";
+  $res=mysql("sky_switch",$query);
+  $num=mysql_num_rows($res);
+  for ($i=0;$i<$num;$i++) {
+    $dd++;
+    $status=mysql_result($res,$i,"status");
+  switch ($status) {
+    case 1:
+      $ret="<font color=blue>";
+//      echo "P^P?QBP8P:P0 P?Q@P8QAQCQBQAP2QCP5QB P=P5 P?P>P4P:P;QNQGP5P=P0 ";
+      break;
+    case 2:
+      $ret="<font color=red>";
+//      echo "P^P?QBP8P:P0 P?P>P4P:P;QNQGP5P=P0 100P\P1P8QB ";
+      break;
+    case 3:
+      $ret="<font color=green>";
+//      echo "P^P?QBP8P:P0 P?P>P4P:P;QNQGP5P=P0 1 PSP1P8QB ";
+      break;
+return($ret);
+}

@@ -1,0 +1,264 @@
+
+http://www.opennet.ru/base/cisco/snmp_manage.txt.html
+
+
+
+From: ВОЛКА <BOJIKA@mailru.com.>
+Newsgroups: http://cisco.far.ru
+Date: Mon, 20 Sep 2004 18:21:07 +0000 (UTC)
+Subject: Использование SNMP для копирования и управления конфигурацией Cisco
+
+Оригинал: http://cisco.far.ru/snmp.shtml
+
+Часть первая.
+-------------
+
+
+    - Копируем Running-Config с роутера на tftp-сервер
+    - Загрузка файла конфигурации с tftp-сервера на роутер
+    - Копируем IOS с роутера на tftp-сервер
+    - Копируем IOS с tftp-сервера на роутер
+
+
+   Замечания:
+
+   эта процедура не может быть использована на устройствах
+   run-from-Flash, например 2500 эта процедура не работает если не
+   установлена community string с правами на чтение\запись (тоесть в
+   конфигурация должна быть строка подобная этой snmp-server community
+   private RW)
+
+   Обозначения:
+
+        IOS.bin имя CiscoIOS файла
+        #.#.#.# IP-адрес (или DNS-имя) роутера
+        $.$.$.$ IP-адрес TFTP-сервера
+        w-string SNMP community string с правами на чтение\запись
+
+
+Копируем Running-Config с роутера на tftp-сервер
+
+   В директории /tftpboot создадим пустой файл с именем router-config,
+   зададим права доступа к этому файлу chmod 777 router-config.
+
+   Введем команду:
+
+        snmpset -c rw-string #.#.#.# .1.3.6.1.4.1.9.2.1.55.$.$.$.$
+octetstring router-config
+
+
+Загрузка файла конфигурации с tftp-сервера на роутер
+
+   В директорию /tftpboot поместим файл новой конфигурации, зададим права
+   доступа к файлу chmod 777 router-config.
+
+   Введем команду:
+
+        snmpset -c rw-string #.#.#.# .1.3.6.1.4.1.9.2.1.53.$.$.$.$
+octetstring router-config
+
+
+   Поле того как файл был записан в RAM, скопируем его в NVRAM используя
+   следующую команду:
+
+        snmpset -c rw-string #.#.#.# .1.3.6.1.4.1.9.2.1.54.0 integer 1
+
+
+Копируем IOS с роутера на tftp-сервер
+
+   В директории /tftpboot создадим пустой файл с именем IOS'а, зададим
+   права доступа к файлу chmod 777 IOS.bin.
+   Введем команду:
+
+        snmpset -c rw-string #.#.#.# .1.3.6.1.4.1.9.2.10.9.$.$.$.$
+octetstring IOS.bin
+
+
+Копируем IOS с tftp-сервера на роутер
+
+   Поместим новый IOS в директорию /tftpboot, зададим права доступа к
+   файлу chmod 777 IOS.bin.
+   Предварительно может потребоваться освободить место во flash'е для
+   нового IOS'а. Если так, то вводим следующую команду:
+
+        snmpset -c rw-string #.#.#.# .1.3.6.1.4.1.9.2.10.6.0 integer 1
+
+
+   далее вводим:
+
+        snmpset -c rw-string #.#.#.# .1.3.6.1.4.1.9.2.10.12.$.$.$.$
+octetstring IOS.bin
+
+
+Часть вторая.
+
+   Но есть более универсальны способ - это использовать
+CISCO-CONFIG-COPY-MIB
+
+   указаваем тип протокола {1=tftp 2=ftp 3=rcp}
+
+        snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.2.aaa integer 1
+
+
+   далее указываем тип исходного файла {1=сетевой файл, то есть файл
+   находящийся на другом сетевом устройстве, например на tftp сервере;
+   2=локальный файл, отличный от StartupConfig или RunningConfig,
+   например IOS; 3=StartupConfig; 4=RunningConfig; 5=terminal, то есть
+   окно консоли, в котором будет отображен конфиг}
+
+       snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.3.aaa integer 3
+
+
+   указываем тип целевого файла аналогично предыдущему
+
+       snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.4.aaa integer 1
+
+
+   указываем ip-адрес сервера
+
+       snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.5.aaa address 10.0.0.1
+
+
+   указаваем имя файла (включая путь, если надо). Это следует делать
+   исходный или целевой файлы умеют тип 1 или 2
+
+       snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.6.aaa string
+StartUp.txt
+
+
+   если тип протокола ftp или rcp, то задаём имя пользователя, будет
+   спользовано то имя пользователя, которое задано в команде snmpset а не
+   то, что указано в конфигурации rcmd remote-username <username>
+
+       snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.6.aaa string UserName
+
+
+   если протокол ftp, то задаём и пароль
+
+       snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.6.aaa string Password
+
+
+   копируем :))
+
+       snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.14.aaa integer 1
+
+
+   проверяем, если вернёт 3 - то всё хорошо
+
+       snmpget -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.10.aaa
+
+
+   Пример:
+
+       C:\usr\bin>snmpset -c public -m all
+10.0.0.1.1.3.6.1.4.1.9.9.96.1.1.1.1.2.999 i 1
+
+enterprises.cisco.ciscoMgmt.ciscoConfigCopyMIB.ciscoConfigCopyMIBObjects.
+       ccCopy.ccCopyTable.ccCopyEntry.ccCopyProtocol.999 = tftp(1)
+
+       C:\usr\bin>snmpset -c public -m all
+10.0.0.1.1.3.6.1.4.1.9.9.96.1.1.1.1.3.999 i 3
+
+enterprises.cisco.ciscoMgmt.ciscoConfigCopyMIB.ciscoConfigCopyMIBObjects.
+       ccCopy.ccCopyTable.ccCopyEntry.ccCopySourceFileType.999 =
+       startupConfig(3)
+
+       C:\usr\bin>snmpset -c public -m all
+10.0.0.1.1.3.6.1.4.1.9.9.96.1.1.1.1.4.999 i 1
+
+enterprises.cisco.ciscoMgmt.ciscoConfigCopyMIB.ciscoConfigCopyMIBObjects.
+       ccCopy.ccCopyTable.ccCopyEntry.ccCopyDestFileType.999 =
+networkFile(1)
+
+       C:\usr\bin>snmpset -c public -m all
+10.0.0.1.1.3.6.1.4.1.9.9.96.1.1.1.1.5.999 a 10.254.4.14
+
+enterprises.cisco.ciscoMgmt.ciscoConfigCopyMIB.ciscoConfigCopyMIBObjects.
+       ccCopy.ccCopyTable.ccCopyEntry.ccCopyServerAddress.999 = IpAddress:
+10.254.4.14
+
+       C:\usr\bin>snmpset -c public -m all
+10.0.0.1.1.3.6.1.4.1.9.9.96.1.1.1.1.6.999 s StartUp.cfg
+
+enterprises.cisco.ciscoMgmt.ciscoConfigCopyMIB.ciscoConfigCopyMIBObjects.
+       ccCopy.ccCopyTable.ccCopyEntry.ccCopyFileName.999 = StartUp.cfg
+
+       C:\usr\bin>snmpset -c public -m all
+10.0.0.1.1.3.6.1.4.1.9.9.96.1.1.1.1.14.999 i 1
+
+enterprises.cisco.ciscoMgmt.ciscoConfigCopyMIB.ciscoConfigCopyMIBObjects.
+       ccCopy.ccCopyTable.ccCopyEntry.ccCopyEntryRowStatus.999 = active(1)
+
+       C:\usr\bin>snmpget -c public -m all
+10.0.0.1.1.3.6.1.4.1.9.9.96.1.1.1.1.10.999
+
+enterprises.cisco.ciscoMgmt.ciscoConfigCopyMIB.ciscoConfigCopyMIBObjects.
+       ccCopy.ccCopyTable.ccCopyEntry.ccCopyState.999 = successful(3)
+
+
+   Ребут киски по snmp?
+
+   разрешаем reload циски по SNMP
+
+       Router(config)#snmp-server system-shutdown
+
+       C:\usr\bin>snmpset -c public -m all 10.0.0.1 .1.3.6.1.4.1.9.2.9.9.0 i
+2
+       enterprises.cisco.local.lts.tsMsgSend.0 = reload(2)
+
+
+   Как по SNMP скинуть юзера?
+
+       C:\usr\bin>snmpset -c public -m all 10.0.0.1 .1.3.6.1.4.1.9.2.9.10.0
+i 130
+       enterprises.cisco.local.9.10.0 = 130
+
+
+   Как по SNMP опускать интерфейс?
+
+       C:\usr\bin>snmpset -c public -m all 10.0.0.1 .1.3.6.1.2.1.2.2.1.7.N i
+1
+       interfaces.ifTable.ifEntry.ifAdminStatus.N = up(1)
+
+
+   если хотите узнать, что же вы всё-таки подняли, то
+
+       C:\usr\bin>snmpget -c public -m all 10.0.0.1 .1.3.6.1.2.1.2.2.1.2.N
+       interfaces.ifTable.ifEntry.ifDescr.N = Serial0/0
+
+
+   N - номер интерфейса 1=up; 2=down
+
+
+
+
+ 
+<< Предыдущая ИНДЕКС Правка src Установить закладку Перейти на закладку
+Следующая >> 
+ 
+ 
+
+Обсуждение [ RSS ] 
+ 
+  Использование SNMP для копирования и упр, Mr.Malina, 10:00:42, 02/09/2005
+[ответить] (1) 
+ 
+ЭЭЭ, я посмотрю вы все тут умные дядьки, а кто-нить пробовал это сделать?
+Так вот если пробовал то должен знать, что в строке: 
+snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.6.aaa string UserName 
+должно быть: 
+.1.3.6.1.4.1.9.9.96.1.1.1.1.7.aaa 
+
+а в строке: 
+snmpset -с private .1.3.6.1.4.1.9.9.96.1.1.1.1.6.aaa string Password 
+
+должно быть: 
+.1.3.6.1.4.1.9.9.96.1.1.1.1.8.aaa 
+
+Вот! 
+
+а вообще можно просто в тексте поправить, а мой комент похерить... =)
+ 
+ 
+ 
+ 

@@ -1,0 +1,21 @@
+#!/usr/local/bin/php -q
+<?php
+if ($argc > 1 ) {
+$user=$argv[1];
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+$query="select * from sessions where username like '$user' order by dateStart desc limit 0,200";
+$res=mysql("mvs",$query);
+// echo mysql_error($res);
+$num=mysql_num_rows($res);
+for ($i=0;$i < $num;$i++) {
+  $user=mysql_result($res,$i,"username");
+  $tty=mysql_result($res,$i,"tty");
+  $date=mysql_result($res,$i,"dateStart");
+  $datee=mysql_result($res,$i,"dateEnd");
+  $access=mysql_result($res,$i,"access");
+  $mvsip=mysql_result($res,$i,"mvsip");
+  $interface=mysql_result($res,$i,"interface");
+  echo sprintf("%12s %8s %6s %15s %15s %10s %15s\n",$user,$tty,$interface,$date,$datee,$access,$mvsip);
+}
+}
+?>

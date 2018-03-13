@@ -1,0 +1,51 @@
+<?php
+function inserts($query) {
+  mysql_connect("localhost","root","CaptonOne");
+mysql_set_charset("utf8");
+  echo "$query;\n";
+  $res=mysql("switch",$query);
+  echo mysql_error();
+  return;  
+}
+function connected($id) {
+  mysql_connect("localhost","root","CaptonOne");
+  $query="select * from links_optica where buildid=$id";
+  $res=mysql("switch",$query);
+  $num=mysql_num_rows($res);
+  if ($num > 0) {
+    $as=mysql_result($res,0,"linkbuild");
+  } else {
+    $as=0;
+  }
+  return($as);
+}
+function sent($id,$name) {
+mysql_connect("91.223.48.25","root","");
+  $query="select count(users.disable) as customers from users,users_pi where users_pi.__dom=$id and users.disable=0 and users_pi.uid=users.uid";
+  $res=mysql("abills",$query);
+  echo mysql_error();
+  $customers=mysql_result($res,0,"customers");
+  $idconnect=connected($id);
+  $query="insert into points(id,address,customers,idconnect) VALUES ($id,'$name',$customers,$idconnect)";
+  inserts($query);
+//  echo "$query $id $name $customers $idconnect\n";
+}
+function clear() {
+  mysql_connect("localhost","root","CaptonOne");
+  $query="delete from points";
+  $res=mysql("switch",$query);
+
+}
+function update() {
+mysql_connect("91.223.48.25","root","");
+mysql_set_charset("utf8");
+$query="select * from __dom_list order by id";
+$res=mysql("abills",$query);
+$num=mysql_num_rows($res);
+for ($i=0;$i<$num;$i++) {
+  $id=mysql_result($res,$i,"id");
+  $name=mysql_result($res,$i,"name");
+  sent($id,$name);
+}
+}
+?>

@@ -1,0 +1,2 @@
+    AddHandler php5-cgi .php3 .php .htm .html
+    Action php5-cgi /cgi-bin/php5-cgi

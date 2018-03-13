@@ -1,0 +1,4 @@
+#AuthName " SkyDesk Authorization"
+#AuthType Basic
+#AuthUserFile /etc/www/auth
+#Require valid-user

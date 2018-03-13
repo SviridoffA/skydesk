@@ -1,0 +1,3 @@
+AuthUserFile /etc/www/auth
+AuthType Basic
+Require user skyadm admin love4you it RUJOPA

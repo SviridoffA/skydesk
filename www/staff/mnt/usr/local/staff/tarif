@@ -1,0 +1,62 @@
+#!/usr/local/bin/php -q
+<?php
+/*
+
+Syntax:
+
+  tarif -sl SPEED --> sort by Login
+	-st SPEED --> sort by Tarif
+	-tl TARIF --> sort by Login
+	-ts TARIF --> sort by Speed
+
+*/
+
+/*=======[ Get cmdline parameters ]=======*/
+for ($i=1; $i<=$argc-1; $i++) {
+ if ($argv[$i]=="-sl"){$speed=$argv[$i+1]; $sort="username";}
+ if ($argv[$i]=="-st"){$speed=$argv[$i+1]; $sort="tarif";}
+ if ($argv[$i]=="-tl"){$tarif=$argv[$i+1]; $sort="username";}
+ if ($argv[$i]=="-ts"){$tarif=$argv[$i+1]; $sort="speed";}
+}
+/*=======[ Get cmdline parameters ]=======*/
+
+/* begin */
+
+
+if ($speed){
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+  $speed=$speed*1024;
+  $query="select `username`,`tarif`,`speed` from `customers` where `speed`=$speed order by `$sort`";
+  $res=mysql("mvs",$query) or die("Query failed : ".mysql_error());
+  $i=1;
+  echo sprintf("\n%-6s%-25s%-12s%-12s\n","N","Login","Tarif","Speed");
+  while ($row = mysql_fetch_assoc($res)) {
+   echo sprintf("%-6s%-25s%-12d%-12s\n",$i,$row["username"],$row["tarif"],$row["speed"]/1024);
+   $i++;
+  }
+
+}else if ($tarif){
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+  $query="select `username`,`tarif`,`speed` from `customers` where `tarif`=$tarif order by `$sort`";
+  $res=mysql("mvs",$query) or die("Query failed : ".mysql_error());
+  $i=1;
+  echo sprintf("\n%-6s%-25s%-12s%-12s\n","N","Login","Tarif","Speed");
+  while ($row = mysql_fetch_assoc($res)) {
+   echo sprintf("%-6s%-25s%-12d%-12s\n",$i,$row["username"],$row["tarif"],$row["speed"]/1024);
+   $i++;
+  }
+
+}else{
+echo "
+
+Syntax:
+
+  tarif -sl SPEED --> sort by Login
+	-ss SPEED --> sort by Speed
+	-tl TARIF --> sort by Login
+	-ts TARIF --> sort by Speed
+
+";
+}
+/* end */
+?>

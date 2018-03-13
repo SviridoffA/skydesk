@@ -1,0 +1,28 @@
+<?php
+class cisco extends switchoid{
+// community
+   public $community='public';
+
+   function savetotftp($ip,$file,$tftp) {
+     
+// snmpset -v 1 -c private 195.72.157.250 .1.3.6.1.4.1.9.2.1.55.195.72.157.253 string 3560
+
+      snmpset($ip,$this->community,".1.3.6.1.4.1.9.2.1.55.$tftp","string", $file);
+
+   }
+  function cfg_mrtg_port_all($ip,$community) {
+    $port=$this->ports($ip);
+    $num=count($port);
+    if ($num > 10) $num=10;
+    for ($i=0;$i<$num;$i++) {
+      $index=$port[$i];
+      $index=ereg_replace("INTEGER: ","",$index);
+      $cfg=$cfg.$this->cfg_mrtg_port($ip,$index,"tenretni");
+    }
+    return($cfg);
+  }
+
+
+}
+
+?>

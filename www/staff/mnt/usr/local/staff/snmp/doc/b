@@ -1,0 +1,310 @@
+# Configuration for each Target you want to monitor
+# The configuration keywords "Target" must be followed by a
+# Note that the "Target" sections can be auto-generated with
+## Target ----------------------------------------
+# With the "Target" keyword you tell mrtg what it should
+# monitor. The "Target" keyword takes arguments in a wide
+# Target[ezwf]: 2:public@wellfleet-fddi.ethz.ch
+#   by adding the '-' sign in front of the "Target"
+# Target[ezci]: -1:public@ezci-ether.ethz.ch
+# Target[ezwf]: 1.3.6.1.2.1.2.2.1.14.1&1.3.6.1.2.1.2.2.1.20.1:public@myrouter
+# Target[ezwf]: ifInErrors.1&ifOutErrors.1:public@myrouter
+# Target[ezwf]: `/usr/local/bin/df2mrtg /dev/dsk/c0t2d0s0`
+# Target[ezwf]: 2:public@wellfleetA + 1:public@wellfleetA
+# Target[kacisco]: 1:public@194.64.66.250 + 2:public@194.64.66.250
+# Optional Target Configuration Tags
+# Two very special Target names
+# a Target called '$' but its options will be APPENDED.
+#Target[r1]: 2:public@myrouter.somplace.edu
+#Target[isdn]: 2:public@router.somplace.edu
+#Target[backb]: 1:public@router.somplace.edu
+#Target[isdn2]: 3:public@router.somplace.edu
+Target[10.90.89.103_1]: 1:public@10.90.89.103:
+Target[10.90.89.103_2]: 2:public@10.90.89.103:
+# Target[10.90.89.103_101]: 101:public@10.90.89.103:
+# Target[10.90.89.103_102]: 102:public@10.90.89.103:
+Target[10.90.89.103_103]: 103:public@10.90.89.103:
+# Target[10.90.89.103_104]: 104:public@10.90.89.103:
+Target[10.90.89.103_105]: 105:public@10.90.89.103:
+# Target[10.90.89.103_106]: 106:public@10.90.89.103:
+# Target[10.90.89.103_107]: 107:public@10.90.89.103:
+# Target[10.90.89.103_108]: 108:public@10.90.89.103:
+# Target[10.90.89.103_109]: 109:public@10.90.89.103:
+# Target[10.90.89.103_110]: 110:public@10.90.89.103:
+# Target[10.90.89.103_111]: 111:public@10.90.89.103:
+# Target[10.90.89.103_112]: 112:public@10.90.89.103:
+# Target[10.90.89.103_113]: 113:public@10.90.89.103:
+# Target[10.90.89.103_114]: 114:public@10.90.89.103:
+# Target[10.90.89.103_115]: 115:public@10.90.89.103:
+# Target[10.90.89.103_116]: 116:public@10.90.89.103:
+# Target[10.90.89.103_117]: 117:public@10.90.89.103:
+# Target[10.90.89.103_118]: 118:public@10.90.89.103:
+# Target[10.90.89.103_119]: 119:public@10.90.89.103:
+# Target[10.90.89.103_120]: 120:public@10.90.89.103:
+# Target[10.90.89.103_121]: 121:public@10.90.89.103:
+# Target[10.90.89.103_122]: 122:public@10.90.89.103:
+# Target[10.90.89.103_123]: 123:public@10.90.89.103:
+# Target[10.90.89.103_124]: 124:public@10.90.89.103:
+# Target[10.90.89.103_126]: 126:public@10.90.89.103:
+Target[10.90.89.103_1001]: 1001:public@10.90.89.103:
+# Target[10.90.89.103_1002]: 1002:public@10.90.89.103:
+# Target[10.90.89.103_1003]: 1003:public@10.90.89.103:
+# Target[10.90.89.103_1004]: 1004:public@10.90.89.103:
+# Target[10.90.89.103_1005]: 1005:public@10.90.89.103:
+# Target[10.90.89.103_1006]: 1006:public@10.90.89.103:
+# Target[10.90.89.103_1007]: 1007:public@10.90.89.103:
+# Target[10.90.89.103_1008]: 1008:public@10.90.89.103:
+# Target[10.90.89.103_1009]: 1009:public@10.90.89.103:
+# Target[10.90.89.103_1010]: 1010:public@10.90.89.103:
+# Target[10.90.89.103_1011]: 1011:public@10.90.89.103:
+# Target[10.90.89.103_1012]: 1012:public@10.90.89.103:
+# Target[10.90.89.103_1013]: 1013:public@10.90.89.103:
+# Target[10.90.89.103_1014]: 1014:public@10.90.89.103:
+# Target[10.90.89.103_1015]: 1015:public@10.90.89.103:
+# Target[10.90.89.103_1016]: 1016:public@10.90.89.103:
+Target[loadcpu]: 1.3.6.1.4.1.9.2.1.58.0&1.3.6.1.4.1.9.2.1.58.0:public@195.72.157.254
+Target[7201mem]: 1.3.6.1.4.1.9.9.48.1.1.1.5.1&1.3.6.1.4.1.9.9.48.1.1.1.6.1:public@195.72.157.254
+Target[3560mem]: 1.3.6.1.4.1.9.9.48.1.1.1.5.1&1.3.6.1.4.1.9.9.48.1.1.1.6.1:public@195.72.157.254
+Target[loadcpu3560]: 1.3.6.1.4.1.9.2.1.58.0&1.3.6.1.4.1.9.2.1.58.0:public@195.72.157.250
+Target[users]: 1.3.6.1.4.1.9.10.24.1.1.4.1.2.3&1.3.6.1.4.1.9.10.24.1.1.4.1.2.3:public@195.72.157.254
+Target[users1]: .1.3.6.1.4.1.9.10.24.1.1.4.1.3.3&1.3.6.1.4.1.9.10.24.1.1.4.1.3.3:public@195.72.157.254
+Target[10.90.91.16_1]: 1:tenretni@10.90.80.3:
+Target[10.90.91.16_2]: 2:tenretni@10.90.80.3:
+Target[10.90.91.16_3]: 3:tenretni@10.90.80.3:
+Target[10.90.91.16_4]: 4:tenretni@10.90.80.3:
+Target[10.90.91.16_5]: 5:tenretni@10.90.80.3:
+Target[10.90.91.16_6]: 6:tenretni@10.90.80.3:
+Target[10.90.91.16_7]: 7:tenretni@10.90.80.3:
+Target[10.90.91.16_8]: 8:tenretni@10.90.80.3:
+Target[10.90.91.16_9]: 9:tenretni@10.90.80.3:
+Target[10.90.91.16_10]: 10:tenretni@10.90.80.3:
+Target[10.90.91.16_11]: 11:tenretni@10.90.80.3:
+Target[10.90.91.16_12]: 12:tenretni@10.90.80.3:
+Target[10.90.91.16_13]: 13:tenretni@10.90.80.3:
+Target[10.90.91.16_14]: 14:tenretni@10.90.80.3:
+Target[10.90.91.16_15]: 15:tenretni@10.90.80.3:
+Target[10.90.91.16_16]: 16:tenretni@10.90.80.3:
+Target[10.90.91.16_17]: 17:tenretni@10.90.80.3:
+Target[10.90.91.16_18]: 18:tenretni@10.90.80.3:
+Target[10.90.91.16_19]: 19:tenretni@10.90.80.3:
+Target[10.90.91.16_20]: 20:tenretni@10.90.80.3:
+Target[10.90.91.16_21]: 21:tenretni@10.90.80.3:
+Target[10.90.91.16_22]: 22:tenretni@10.90.80.3:
+Target[10.90.91.16_23]: 23:tenretni@10.90.80.3:
+Target[10.90.91.16_24]: 24:tenretni@10.90.80.3:
+Target[10.90.91.16_25]: 25:tenretni@10.90.80.3:::::2
+Target[10.90.91.16_26]: 26:tenretni@10.90.80.3:::::2
+# Target[10.90.91.16_45]: 45:tenretni@10.90.80.3:
+# Target[10.90.91.16_1001]: 1001:tenretni@10.90.80.3:
+# Target[10.90.91.16_1007]: 1007:tenretni@10.90.80.3:
+# Target[10.90.91.16_1008]: 1008:tenretni@10.90.80.3:
+# Target[10.90.91.16_1010]: 1010:tenretni@10.90.80.3:
+# Target[10.90.91.16_5093]: 5093:tenretni@10.90.80.3:
+Target[10.90.90.95_1]: 1:public@10.90.90.95:
+Target[10.90.90.95_2]: 2:public@10.90.90.95:
+Target[10.90.90.95_3]: 3:public@10.90.90.95:
+Target[10.90.90.95_4]: 4:public@10.90.90.95:
+Target[10.90.90.95_5]: 5:public@10.90.90.95:
+Target[10.90.90.95_6]: 6:public@10.90.90.95:
+Target[10.90.90.95_7]: 7:public@10.90.90.95:
+Target[10.90.90.95_8]: 8:public@10.90.90.95:
+Target[10.90.90.95_9]: 9:public@10.90.90.95:::::2
+Target[10.90.90.95_10]: 10:public@10.90.90.95:::::2
+# Target[10.90.90.95_45]: 45:public@10.90.90.95:
+# Target[10.90.90.95_1001]: 1001:public@10.90.90.95:
+# Target[10.90.90.95_5093]: 5093:public@10.90.90.95:
+Target[10.90.89.93_1]: 1:tenretni@10.90.89.93:
+Target[10.90.89.93_2]: 2:tenretni@10.90.89.93:
+Target[10.90.89.93_3]: 3:tenretni@10.90.89.93:
+Target[10.90.89.93_4]: 4:tenretni@10.90.89.93:
+Target[10.90.89.93_5]: 5:tenretni@10.90.89.93:
+Target[10.90.89.93_6]: 6:tenretni@10.90.89.93:
+Target[10.90.89.93_7]: 7:tenretni@10.90.89.93:
+Target[10.90.89.93_8]: 8:tenretni@10.90.89.93:
+Target[10.90.89.93_9]: 9:tenretni@10.90.89.93:
+Target[10.90.89.93_10]: 10:tenretni@10.90.89.93:
+Target[10.90.89.93_11]: 11:tenretni@10.90.89.93:
+Target[10.90.89.93_12]: 12:tenretni@10.90.89.93:
+Target[10.90.89.93_13]: 13:tenretni@10.90.89.93:
+Target[10.90.89.93_14]: 14:tenretni@10.90.89.93:
+Target[10.90.89.93_15]: 15:tenretni@10.90.89.93:
+Target[10.90.89.93_16]: 16:tenretni@10.90.89.93:
+Target[10.90.89.93_17]: 17:tenretni@10.90.89.93:
+Target[10.90.89.93_18]: 18:tenretni@10.90.89.93:
+Target[10.90.89.93_19]: 19:tenretni@10.90.89.93:
+Target[10.90.89.93_20]: 20:tenretni@10.90.89.93:
+Target[10.90.89.93_21]: 21:tenretni@10.90.89.93:
+Target[10.90.89.93_22]: 22:tenretni@10.90.89.93:
+Target[10.90.89.93_23]: 23:tenretni@10.90.89.93:
+Target[10.90.89.93_24]: 24:tenretni@10.90.89.93:
+Target[10.90.89.93_25]: 25:tenretni@10.90.89.93:
+Target[10.90.89.93_26]: 26:tenretni@10.90.89.93:
+# Target[10.90.89.93_45]: 45:tenretni@10.90.89.93:
+# Target[10.90.89.93_1001]: 1001:tenretni@10.90.89.93:
+# Target[10.90.89.93_1100]: 1100:tenretni@10.90.89.93:
+# Target[10.90.89.93_5093]: 5093:tenretni@10.90.89.93:
+Target[10.90.89.92_1]: 1:tenretni@10.90.89.92:
+Target[10.90.89.92_2]: 2:tenretni@10.90.89.92:
+Target[10.90.89.92_3]: 3:tenretni@10.90.89.92:
+Target[10.90.89.92_4]: 4:tenretni@10.90.89.92:
+Target[10.90.89.92_5]: 5:tenretni@10.90.89.92:
+Target[10.90.89.92_6]: 6:tenretni@10.90.89.92:
+Target[10.90.89.92_7]: 7:tenretni@10.90.89.92:
+Target[10.90.89.92_8]: 8:tenretni@10.90.89.92:
+Target[10.90.89.92_9]: 9:tenretni@10.90.89.92:
+Target[10.90.89.92_10]: 10:tenretni@10.90.89.92:
+Target[10.90.89.92_11]: 11:tenretni@10.90.89.92:
+Target[10.90.89.92_12]: 12:tenretni@10.90.89.92:
+Target[10.90.89.92_13]: 13:tenretni@10.90.89.92:
+Target[10.90.89.92_14]: 14:tenretni@10.90.89.92:
+Target[10.90.89.92_15]: 15:tenretni@10.90.89.92:
+Target[10.90.89.92_16]: 16:tenretni@10.90.89.92:
+Target[10.90.89.92_17]: 17:tenretni@10.90.89.92:
+Target[10.90.89.92_18]: 18:tenretni@10.90.89.92:
+Target[10.90.89.92_19]: 19:tenretni@10.90.89.92:
+Target[10.90.89.92_20]: 20:tenretni@10.90.89.92:
+Target[10.90.89.92_21]: 21:tenretni@10.90.89.92:
+Target[10.90.89.92_22]: 22:tenretni@10.90.89.92:
+Target[10.90.89.92_23]: 23:tenretni@10.90.89.92:
+Target[10.90.89.92_24]: 24:tenretni@10.90.89.92:
+# Target[10.90.89.92_1024]: 1024:tenretni@10.90.89.92:
+# Target[10.90.89.92_2048]: 2048:tenretni@10.90.89.92:
+Target[10.90.91.18_1]: 1:tenretni@10.90.90.18:
+Target[10.90.91.18_2]: 2:tenretni@10.90.90.18:
+Target[10.90.91.18_3]: 3:tenretni@10.90.90.18:
+Target[10.90.91.18_4]: 4:tenretni@10.90.90.18:
+Target[10.90.91.18_5]: 5:tenretni@10.90.90.18:
+Target[10.90.91.18_6]: 6:tenretni@10.90.90.18:
+Target[10.90.91.18_7]: 7:tenretni@10.90.90.18:
+Target[10.90.91.18_8]: 8:tenretni@10.90.90.18:
+Target[10.90.91.18_9]: 9:tenretni@10.90.90.18:::::2
+Target[10.90.91.18_10]: 10:tenretni@10.90.90.18:::::2
+# Target[10.90.91.18_45]: 45:tenretni@10.90.90.18:
+# Target[10.90.91.18_1001]: 1001:tenretni@10.90.90.18:
+# Target[10.90.91.18_1007]: 1007:tenretni@10.90.90.18:
+# Target[10.90.91.18_1010]: 1010:tenretni@10.90.90.18:
+# Target[10.90.91.18_5093]: 5093:tenretni@10.90.90.18:
+Target[10.90.90.82_1]: 1:tenretni@10.90.90.82:
+Target[10.90.90.82_2]: 2:tenretni@10.90.90.82:
+Target[10.90.90.82_3]: 3:tenretni@10.90.90.82:
+Target[10.90.90.82_4]: 4:tenretni@10.90.90.82:
+Target[10.90.90.82_5]: 5:tenretni@10.90.90.82:
+Target[10.90.90.82_6]: 6:tenretni@10.90.90.82:
+Target[10.90.90.82_7]: 7:tenretni@10.90.90.82:
+Target[10.90.90.82_8]: 8:tenretni@10.90.90.82:
+Target[10.90.90.82_9]: 9:tenretni@10.90.90.82:::::2
+Target[10.90.90.82_10]: 10:tenretni@10.90.90.82:::::2
+Target[10.90.90.31_1]: 1:tenretni@10.90.90.31:
+Target[10.90.90.31_2]: 2:tenretni@10.90.90.31:
+Target[10.90.90.31_3]: 3:tenretni@10.90.90.31:
+# Target[10.90.90.31_4]: 4:tenretni@10.90.90.31:
+Target[10.90.90.31_5]: 5:tenretni@10.90.90.31:
+Target[10.90.90.31_6]: 6:tenretni@10.90.90.31:
+Target[10.90.90.31_7]: 7:tenretni@10.90.90.31:
+Target[10.90.90.31_8]: 8:tenretni@10.90.90.31:
+Target[10.90.90.31_9]: 9:tenretni@10.90.90.31:
+Target[10.90.90.31_10]: 10:tenretni@10.90.90.31:
+Target[10.90.90.31_11]: 11:tenretni@10.90.90.31:
+Target[10.90.90.31_12]: 12:tenretni@10.90.90.31:
+Target[10.90.90.31_13]: 13:tenretni@10.90.90.31:
+Target[10.90.90.31_14]: 14:tenretni@10.90.90.31:
+Target[10.90.90.31_15]: 15:tenretni@10.90.90.31:
+Target[10.90.90.31_16]: 16:tenretni@10.90.90.31:
+Target[10.90.90.31_17]: 17:tenretni@10.90.90.31:
+Target[10.90.90.31_18]: 18:tenretni@10.90.90.31:
+Target[10.90.90.31_19]: 19:tenretni@10.90.90.31:
+Target[10.90.90.31_20]: 20:tenretni@10.90.90.31:
+Target[10.90.90.31_21]: 21:tenretni@10.90.90.31:
+Target[10.90.90.31_22]: 22:tenretni@10.90.90.31:
+Target[10.90.90.31_23]: 23:tenretni@10.90.90.31:
+Target[10.90.90.31_24]: 24:tenretni@10.90.90.31:
+Target[10.90.90.31_25]: 25:tenretni@10.90.90.31:::::2
+Target[10.90.90.31_26]: 26:tenretni@10.90.90.31:::::2
+Target[10.90.90.31_27]: 27:tenretni@10.90.90.31:::::2
+Target[10.90.90.31_28]: 28:tenretni@10.90.90.31:::::2
+# Target[10.90.90.31_61]: 61:tenretni@10.90.90.31:
+# Target[10.90.90.31_1001]: 1001:tenretni@10.90.90.31:
+# Target[10.90.90.31_1002]: 1002:tenretni@10.90.90.31:
+# Target[10.90.90.31_1007]: 1007:tenretni@10.90.90.31:
+# Target[10.90.90.31_1010]: 1010:tenretni@10.90.90.31:
+# Target[10.90.90.31_1040]: 1040:tenretni@10.90.90.31:
+# Target[10.90.90.31_1080]: 1080:tenretni@10.90.90.31:
+# Target[10.90.90.31_5093]: 5093:tenretni@10.90.90.31:
+Target[10.90.90.33_1]: 1:tenretni@10.90.90.33:
+Target[10.90.90.33_2]: 2:tenretni@10.90.90.33:
+Target[10.90.90.33_3]: 3:tenretni@10.90.90.33:
+Target[10.90.90.33_4]: 4:tenretni@10.90.90.33:
+Target[10.90.90.33_5]: 5:tenretni@10.90.90.33:
+Target[10.90.90.33_6]: 6:tenretni@10.90.90.33:
+Target[10.90.90.33_7]: 7:tenretni@10.90.90.33:
+Target[10.90.90.33_8]: 8:tenretni@10.90.90.33:
+Target[10.90.90.33_9]: 9:tenretni@10.90.90.33:
+Target[10.90.90.33_10]: 10:tenretni@10.90.90.33:
+Target[10.90.90.33_11]: 11:tenretni@10.90.90.33:
+Target[10.90.90.33_12]: 12:tenretni@10.90.90.33:
+Target[10.90.90.33_13]: 13:tenretni@10.90.90.33:
+Target[10.90.90.33_14]: 14:tenretni@10.90.90.33:
+Target[10.90.90.33_15]: 15:tenretni@10.90.90.33:
+Target[10.90.90.33_16]: 16:tenretni@10.90.90.33:
+Target[10.90.90.33_17]: 17:tenretni@10.90.90.33:
+Target[10.90.90.33_18]: 18:tenretni@10.90.90.33:
+Target[10.90.90.33_19]: 19:tenretni@10.90.90.33:
+Target[10.90.90.33_20]: 20:tenretni@10.90.90.33:
+Target[10.90.90.33_21]: 21:tenretni@10.90.90.33:
+Target[10.90.90.33_22]: 22:tenretni@10.90.90.33:
+Target[10.90.90.33_23]: 23:tenretni@10.90.90.33:
+Target[10.90.90.33_24]: 24:tenretni@10.90.90.33:
+Target[10.90.90.33_25]: 25:tenretni@10.90.90.33:::::2
+Target[10.90.90.33_26]: 26:tenretni@10.90.90.33:::::2
+Target[10.90.90.33_27]: 27:tenretni@10.90.90.33:::::2
+Target[10.90.90.33_28]: 28:tenretni@10.90.90.33:::::2
+# Target[10.90.90.33_61]: 61:tenretni@10.90.90.33:
+# Target[10.90.90.33_1001]: 1001:tenretni@10.90.90.33:
+# Target[10.90.90.33_1007]: 1007:tenretni@10.90.90.33:
+# Target[10.90.90.33_1010]: 1010:tenretni@10.90.90.33:
+# Target[10.90.90.33_1040]: 1040:tenretni@10.90.90.33:
+# Target[10.90.90.33_1080]: 1080:tenretni@10.90.90.33:
+# Target[10.90.90.33_5093]: 5093:tenretni@10.90.90.33:
+Target[195.72.157.254_1]: 1:public@195.72.157.254:::::2
+Target[195.72.157.254_7]: 7:public@195.72.157.254:::::2
+Target[195.72.157.254_8]: 8:public@195.72.157.254:::::2
+Target[195.72.157.252_22]: 22:tenretni@195.72.157.252:::::2
+Target[195.72.157.252_24]: 24:tenretni@195.72.157.252:::::2
+Target[195.72.157.252_25]: 25:tenretni@195.72.157.252:::::2
+Target[195.72.157.252_26]: 26:tenretni@195.72.157.252:::::2
+Target[195.72.157.252_27]: 27:tenretni@195.72.157.252:::::2
+Target[195.72.157.252_28]: 28:tenretni@195.72.157.252:::::2
+Target[195.72.157.250_80]: 80:public@195.72.157.250:::::2
+Target[195.72.157.250_10101]: 10101:public@195.72.157.250:::::2
+Target[195.72.157.250_10102]: 10102:public@195.72.157.250:::::2
+Target[10.90.89.200_1]: 1:tenretni@10.90.89.200:
+Target[10.90.89.200_2]: 2:tenretni@10.90.89.200:
+Target[10.90.89.200_3]: 3:tenretni@10.90.89.200:
+Target[10.90.89.200_4]: 4:tenretni@10.90.89.200:
+Target[10.90.89.200_5]: 5:tenretni@10.90.89.200:
+Target[10.90.89.200_6]: 6:tenretni@10.90.89.200:
+Target[10.90.89.200_7]: 7:tenretni@10.90.89.200:
+Target[10.90.89.200_8]: 8:tenretni@10.90.89.200:
+Target[10.90.89.200_9]: 9:tenretni@10.90.89.200:
+Target[10.90.89.200_10]: 10:tenretni@10.90.89.200:
+Target[10.90.89.200_11]: 11:tenretni@10.90.89.200:
+Target[10.90.89.200_12]: 12:tenretni@10.90.89.200:
+Target[10.90.89.200_13]: 13:tenretni@10.90.89.200:
+Target[10.90.89.200_14]: 14:tenretni@10.90.89.200:
+Target[10.90.89.200_15]: 15:tenretni@10.90.89.200:
+Target[10.90.89.200_16]: 16:tenretni@10.90.89.200:
+Target[10.90.89.200_17]: 17:tenretni@10.90.89.200:
+Target[10.90.89.200_18]: 18:tenretni@10.90.89.200:
+Target[10.90.89.200_19]: 19:tenretni@10.90.89.200:
+Target[10.90.89.200_20]: 20:tenretni@10.90.89.200:
+Target[10.90.89.200_21]: 21:tenretni@10.90.89.200:
+Target[10.90.89.200_22]: 22:tenretni@10.90.89.200:
+Target[10.90.89.200_23]: 23:tenretni@10.90.89.200:
+Target[10.90.89.200_24]: 24:tenretni@10.90.89.200:
+Target[10.90.89.200_25]: 25:tenretni@10.90.89.200:
+Target[10.90.89.200_26]: 26:tenretni@10.90.89.200:
+# Target[10.90.89.200_45]: 45:tenretni@10.90.89.200:
+# Target[10.90.89.200_1001]: 1001:tenretni@10.90.89.200:
+# Target[10.90.89.200_1002]: 1002:tenretni@10.90.89.200:
+# Target[10.90.89.200_1007]: 1007:tenretni@10.90.89.200:
+# Target[10.90.89.200_5093]: 5093:tenretni@10.90.89.200:

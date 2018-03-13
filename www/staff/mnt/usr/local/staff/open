@@ -1,0 +1,25 @@
+#!/usr/local/bin/php -q
+<?php
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/radiusdb.inc');
+$user=$argv[1];
+$sdate=$argv[2];
+$query="select * from customers where username like '$user'";
+$res=mysql("mvs",$query);
+$num=mysql_num_rows($res);
+if ($num) {
+  $dateStop=mysql_result($res,0,"dateStop");
+  $access=mysql_result($res,0,"access");
+  echo "$user $access $dateStop\n\n";
+  $query="update customers set access=0, datestop='$sdate' where username like '$user'";
+//  echo $query;
+  $res=mysql("mvs",$query);
+  $operator=`set | grep USER | sed s'/USER=//'`;
+  open_access($user,$operator);
+  $query="select * from customers where username like '$user'";
+  $res=mysql("mvs",$query);
+  $dateStop=mysql_result($res,0,"dateStop");
+  $access=mysql_result($res,0,"access");
+  echo "$user $access $dateStop\n\n";
+}
+?>

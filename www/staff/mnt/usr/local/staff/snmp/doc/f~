@@ -1,0 +1,10 @@
+<?php
+$id="Cisco IOS Software, 3800 Software (C3825-ADVENTERPRISEK9-M), Version
+12.4(12), RELEASE SOFTWARE (fc1)M
+Technical Support: http://www.cisco.com/techsupportM
+Copyright (c) 1986-2006 by Cisco Systems, Inc.M
+Compiled Fri 17-Nov-06 15:31 by prod_rel_team";
+$i=strstr($id,"4624");
+echo $i;
+
+?>

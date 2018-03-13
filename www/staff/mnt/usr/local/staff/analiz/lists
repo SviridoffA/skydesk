@@ -1,0 +1,57 @@
+#!/usr/local/bin/php -q
+<?php
+include("/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc");
+$cmd="/bin/ls /var/ipa | /usr/bin/grep -v _in$ | /usr/bin/grep -v _out | /usr/bin/grep -v _chat | /usr/bin/grep -v _game";
+$pp=popen($cmd,"r");
+while (!feof($pp)) {
+  $str=fgets($pp,2048);
+  $users=trim($str);
+  $cmds="/usr/local/bin/ipastat -n -e -r $users";
+  $fp=popen($cmds,"r");
+  $bytes=0;
+  while (!feof($fp)) {
+    $sts=fgets($fp,2048);
+//    echo $sts;
+    $mem=explode(" ",$sts);
+    $num=count($mem);
+    switch ($num) {
+      case 3:
+        $bytes=$bytes+$mem[1];
+        break;
+      case 2:
+//        $bytes=$bytes/1024;
+        if ($bytes == 0) {
+          $query="select * from unactive where username like '$users'";
+          $res=mysql("mvs",$query);
+          $ns=mysql_num_rows($res);
+          if ($ns > 0) {
+          } else {
+            $query="select * from customers where username like '$users'";
+            $res=mysql("mvs",$query);
+            $cn=mysql_num_rows($res);
+            if ($cn > 0) {
+              $st="legal";
+            } else {
+              $st="unknown";
+            }        
+            $query="select * from sessions where username like '$users' order by dateEnd desc";
+            $res=mysql("mvs",$query);
+            $tp=mysql_num_rows($res);
+            if ($tp > 0) {
+              $ds=mysql_result($res,0,"dateEnd");
+            } else {
+              $ds="0000-00-00";
+            }
+            $query="insert into unactive(username,date,status) values ('$users','$ds','$st')";
+            $res=mysql("mvs",$query);
+          }
+        }
+        echo "$users $bytes\n";
+        break;
+      default:
+        break;
+    }
+
+  }
+}
+?>

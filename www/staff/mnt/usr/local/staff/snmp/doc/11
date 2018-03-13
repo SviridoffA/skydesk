@@ -1,0 +1,57 @@
+  public function stp_all_switch() {
+    $cfg="";
+    $query="select * from switch where status=1 order by ip";
+    $res=mysql("mvs",$query);
+    $num=mysql_num_rows($res);
+    for ($i=0;$i<$num;$i++) {
+      $ip=mysql_result($res,$i,"ip");
+      $community=mysql_result($res,$i,"community");
+      $this->community=$community;
+      $id=$this->info($ip,$community);
+      switch ($id) {
+        case "DES-3226S Fast-Ethernet Switch":
+          $b=new dlink();
+          break;
+        case "D-Link DES-3200-28F Fast Ethernet Switch"
+          $b=new dlink();
+          break;
+        case "DES-3200-28F Fast Ethernet Switch":
+          $b=new dlink();
+          break;
+        case "DES-3526 Fast-Ethernet Switch":
+          $b=new dlink();
+          break;
+        case "D-Link DES-3028 Fast Ethernet Switch":
+          $b=new dlink();
+          break;
+        case "Edge-Core FE L2 Switch ES3528M":
+          $b=new edgecore3528();
+          break;
+        case "ES3528M":
+          $b=new edgecore3528();
+          break;
+        case "ES3510MA":
+          $b=new edgecore3526();
+          break;
+        case "Layer2+ Fast Ethernet Standalone Switch ES3510":
+          $b=new edgecore3526();
+          break;
+        case "Layer2+ Fast Ethernet Standalone Switch ES3526XA":
+          $b=new edgecore3526();
+          break;
+        case "PLANET WGSD-1022 - 8+2G Managed Switch":
+          $b=new wgsd1022();
+          break;
+        case "ES4624-SFP Device":
+          $b=new edgecore4624();
+          break;
+        default:
+          break;
+      }
+          $b->community=$community;
+          $mem=$b->switch_stp_status($ip);
+          $this->print_forward($mem);
+    }
+    return($cfg);
+  }
+

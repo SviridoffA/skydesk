@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ymaps:ymaps xmlns:ymaps="http://maps.yandex.ru/ymaps/1.x" xmlns:repr="http://maps.yandex.ru/representation/1.x" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maps.yandex.ru/schemas/ymaps/1.x/ymaps.xsd"> 
+    <repr:Representation>
+		<repr:Style gml:id="customStyle"> 
+			<repr:lineStyle> 
+				<repr:strokeColor>FF9911</repr:strokeColor> 
+				<repr:strokeWidth>4</repr:strokeWidth> 
+			</repr:lineStyle> 
+		</repr:Style> 
+		<repr:Style gml:id="customStyle1"> 
+			<repr:parentStyle>#customStyle</repr:parentStyle> 
+			<repr:lineStyle> 
+				<repr:strokeColor>FF00FF</repr:strokeColor> 
+			</repr:lineStyle> 
+		</repr:Style>		
+	</repr:Representation> 
+	<ymaps:GeoObjectCollection> 
+		<gml:name>Полилинии из базы данных</gml:name>
+		<gml:featureMembers><ymaps:GeoObject><gml:name>Маршрут-21</gml:name>	<gml:description>Маршрут в виде ломаной</gml:description>	<gml:LineString><gml:pos>34.160512 44.500003</gml:pos><gml:pos>34.163581 44.495841</gml:pos><gml:pos>34.156864 44.498145</gml:pos></gml:LineString><ymaps:style>#customStyle1</ymaps:style></ymaps:GeoObject><ymaps:GeoObject><gml:name>Маршрут-20</gml:name>	<gml:description>Маршрут в виде ломаной</gml:description>	<gml:LineString><gml:pos>34.152852 44.492831</gml:pos><gml:pos>34.156478 44.497331</gml:pos></gml:LineString><ymaps:style>#customStyle1</ymaps:style></ymaps:GeoObject><ymaps:GeoObject><gml:name>Маршрут-19</gml:name>	<gml:description>Маршрут в виде ломаной</gml:description>	<gml:LineString><gml:pos>34.151851 44.497116</gml:pos><gml:pos>34.156121 44.493506</gml:pos></gml:LineString><ymaps:style>#customStyle1</ymaps:style></ymaps:GeoObject><ymaps:GeoObject><gml:name>Маршрут-17</gml:name>	<gml:description>Маршрут в виде ломаной</gml:description>	<gml:LineString><gml:pos>34.154504 44.491556</gml:pos><gml:pos>34.152702 44.492677</gml:pos><gml:pos>34.153753 44.492754</gml:pos></gml:LineString><ymaps:style>#customStyle1</ymaps:style></ymaps:GeoObject><ymaps:GeoObject><gml:name>Маршрут-18</gml:name>	<gml:description>Маршрут в виде ломаной</gml:description>	<gml:LineString><gml:pos>34.158045 44.488207</gml:pos><gml:pos>34.160019 44.491064</gml:pos><gml:pos>34.154075 44.493629</gml:pos><gml:pos>34.153174 44.490081</gml:pos><gml:pos>34.156714 44.487378</gml:pos></gml:LineString><ymaps:style>#customStyle1</ymaps:style></ymaps:GeoObject><ymaps:GeoObject><gml:name>Маршрут-16</gml:name>	<gml:description>Маршрут в виде ломаной</gml:description>	<gml:LineString><gml:pos>34.155175 44.490761</gml:pos><gml:pos>34.159364 44.490185</gml:pos><gml:pos>34.159826 44.49093</gml:pos><gml:pos>34.159531 44.49149</gml:pos><gml:pos>34.159225 44.491771</gml:pos></gml:LineString><ymaps:style>#customStyle1</ymaps:style></ymaps:GeoObject></gml:featureMembers> 
+	</ymaps:GeoObjectCollection> 
+</ymaps:ymaps>

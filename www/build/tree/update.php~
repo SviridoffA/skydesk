@@ -1,0 +1,5 @@
+#!/usr/local/bin/php -q
+<?php
+include('get.inc');
+updates();
+?>

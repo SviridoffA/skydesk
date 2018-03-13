@@ -1,0 +1,60 @@
+#!/usr/local/bin/php -q
+<?php
+/*=======[ functions ]=======*/
+
+function get_speed($username) {
+
+  $oldspeed=mysql_result(mysql("mvs","select `speed` from `customers` where `username` like '$username'"),0,"speed")/1024;
+  return $oldspeed;
+
+}
+
+function set_speed($username, $speed) {
+  
+  $speedb=$speed*1024;
+  $res=mysql("mvs","UPDATE `customers` SET `speed` = '$speedb' WHERE `username` LIKE '$username'");
+  echo mysql_error();
+
+}
+
+function write_log($username, $oldspeed, $speed) {
+
+  $ip=`set | grep USER | sed s'/USER=//'`;
+  $dogid=mysql_result(mysql("mvs","select `dogovor` from `customers` where `username` like '$username'"),0,"dogovor");
+  $query="insert into `logs` values('','$ip','$username','$dogid',now(),now(),'Speed changed from $oldspeed to $speed')";
+  $res=mysql("mvs",$query);
+  echo mysql_error();
+
+}
+
+/*=======[ functions ]=======*/
+
+/*=======[   begin   ]=======*/
+
+if ($argc==1) {
+/* help */
+  echo "\nUsage: speed USERNAME [SPEED]\n\n       speed USERNAME       --> SHOW speed for USER\n       speed USERNAME SPEED --> SET speed for USER\n\n";
+
+}elseif ($argc==2) {
+/* speed SHOW */
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+  $sp = get_speed($argv[1]);
+  echo "\n\nSpeed for '$argv[1]': $sp KB/s\n\n";
+
+}elseif ($argc==3) {
+/* speed SET */
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+  $oldspeed = get_speed($argv[1]);
+  $today    = `date "+%Y-%m-%d"`;
+  set_speed($argv[1],$argv[2]);
+
+  $header = sprintf("\n\n%-20s %-10s %-12s","USERNAME","SPEED","DATE");
+  $line1  = sprintf("\n\n%-20s %-10s %-12s",$argv[1],$oldspeed,$today);
+  $line2  = sprintf("\n%-20s %-10s %-12s\n\n",$argv[1],$argv[2],$today);
+  echo $header.$line1.$line2;
+  write_log($argv[1], $oldspeed, $argv[2]);
+
+}
+exit;
+/*=======[    end    ]=======*/
+?>

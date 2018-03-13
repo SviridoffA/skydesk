@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Skyinet Network Map</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+        padding-top: 55px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="http://yandex.st/jquery/2.1.1/jquery.js" type="text/javascript"></script>  
+	<script src="data_load_jquery.js"></script>
+	<style type="text/css">
+    html, body, #map {
+    width: 99,5%;
+    height: 98%;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://91.223.48.15/pages/index.html">Skydesk.tk</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://91.223.48.15/sky-maps/">Дома</a>
+                    </li>
+                    <li>
+                        <a href="http://91.223.48.15/sky-maps/editor/editor.php">Редактор линков</a>
+                    </li>
+                    <li>
+                     <a href="http://91.223.48.15/sky-maps/editor/">Линки</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>	
+	
+<div id="map"></div>
+</body>
+<div id="info" style="text-align: center;"><b>
+<br>
+<font color="#000000">*Медный линк </font><font color="ff9900">*Оптика 100Мбит</font><font color="33cc33">*Оптика 1 Гбит</font><font color="435790">*Медный линк, оптика присутсвует</font></b></div>
+
+</html>

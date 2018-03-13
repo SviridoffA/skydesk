@@ -1,0 +1,167 @@
+ip=10.90.89.73 port=5 count=29 desc=port 5
+ip=10.90.89.78 port=3 count=5981 desc=Baxchivandgi20 port 3
+ip=10.90.89.78 port=9 count=2 desc=port 9
+ip=10.46.4.100 port=10 count=46 desc=port 10
+ip=10.46.4.100 port=2 count=3 desc=artema 152 port 2
+ip=10.46.4.100 port=4 count=3 desc=9 port 4
+ip=10.15.2.100 port=1 count=49 desc=Engelsa 39 port 1
+ip=10.15.2.100 port=10 count=4 desc=port 10
+ip=10.15.2.100 port=16 count=2 desc=port 16
+ip=10.15.2.100 port=2 count=35 desc=Artema56 port 2
+ip=10.15.2.100 port=22 count=4 desc=port 22
+ip=10.52.4.100 port=13 count=11 desc=port 13
+ip=10.52.4.100 port=15 count=5 desc=port 15
+ip=10.52.4.100 port=18 count=3 desc=port 18
+ip=10.52.4.100 port=21 count=3 desc=Mitropolitska 56 port 21
+ip=10.52.4.100 port=6 count=10 desc=port 6
+ip=10.52.4.100 port=8 count=17 desc=artema58 port 8
+ip=10.35.3.100 port=1 count=582 desc=Artema56 port 1
+ip=10.35.3.100 port=19 count=4 desc=port 19
+ip=10.35.3.100 port=24 count=5 desc=port 24
+ip=10.39.4.100 port=2 count=18 desc=port 2
+ip=10.39.4.100 port=8 count=4 desc=port 8
+ip=10.90.89.200 port=12 count=3 desc=port 12
+ip=10.90.89.200 port=16 count=2 desc=port 16
+ip=10.90.89.200 port=5 count=12 desc=port 5
+ip=10.26.7.100 port=1 count=20 desc=Zelinskogo 19 port 1
+ip=10.26.7.100 port=10 count=32 desc=port 10
+ip=10.26.7.100 port=11 count=40 desc=port 11
+ip=10.26.7.100 port=14 count=2 desc=port 14
+ip=10.26.7.100 port=18 count=35 desc=port 18
+ip=10.26.7.100 port=19 count=3 desc=port 19
+ip=10.26.7.100 port=2 count=24 desc=Zelinskogo23 port 2
+ip=10.26.7.100 port=20 count=2 desc=port 20
+ip=10.26.7.100 port=22 count=22 desc=port 22
+ip=10.26.7.100 port=23 count=8 desc=port 23
+ip=10.26.7.100 port=4 count=2 desc=port 4
+ip=10.26.7.100 port=5 count=5 desc=port 5
+ip=10.26.7.100 port=6 count=29 desc=port 6
+ip=10.26.7.100 port=9 count=33 desc=port 9
+ip=10.28.2.100 port=11 count=32 desc=port 11
+ip=10.28.2.100 port=9 count=7 desc=kuznechniy2 port 9
+ip=10.23.1.100 port=1 count=3 desc=port 1
+ip=10.23.1.100 port=17 count=13 desc=lenina14 port 17
+ip=10.23.1.100 port=8 count=72 desc=port 8
+ip=10.21.1.102 port=11 count=2 desc=port 11
+ip=10.21.1.102 port=12 count=5 desc=lenina24 vtoroy switch port 12
+ip=10.21.1.102 port=15 count=6 desc=lenina33 port 15
+ip=10.21.1.102 port=18 count=973 desc=oxykosmos port 18
+ip=10.21.1.102 port=2 count=2 desc=port 2
+ip=10.21.1.102 port=7 count=5 desc=lenina27 port 7
+ip=10.19.2.100 port=1 count=22 desc=Lenina40 port 1
+ip=10.19.2.100 port=24 count=293 desc=port 24
+ip=10.19.2.100 port=3 count=29 desc=Lenina45 port 3
+ip=10.18.3.100 port=17 count=619 desc=Artema35 port 17
+ip=10.18.3.100 port=3 count=2 desc=port 3
+ip=10.18.3.100 port=4 count=2 desc=port 4
+ip=10.90.90.31 port=3 count=38 desc=Lenina74-customers port 3
+ip=10.90.90.31 port=6 count=231 desc=Kazanceva22 port 6
+ip=10.31.1.100 port=1 count=2985 desc=port 1
+ip=10.31.1.100 port=11 count=3 desc=port 11
+ip=10.31.1.100 port=13 count=2 desc=port 13
+ip=10.31.1.100 port=15 count=3 desc=port 15
+ip=10.31.1.100 port=19 count=2 desc=port 19
+ip=10.90.91.40 port=2 count=44 desc=port 2
+ip=10.13.2.100 port=1 count=1025 desc=Lenina87 port 1
+ip=10.13.2.100 port=11 count=2 desc=port 11
+ip=10.13.2.100 port=23 count=33 desc=port 23
+ip=10.13.2.100 port=8 count=2 desc=plums port 8
+ip=10.90.89.52 port=10 count=5 desc=helen4 port 10
+ip=10.90.89.52 port=14 count=5 desc=port 14
+ip=10.90.89.52 port=16 count=12 desc=port 16
+ip=10.90.89.52 port=5 count=2692 desc=Lenina90 second_box port 5
+ip=10.90.89.83 port=1 count=53 desc=port 1
+ip=10.90.89.83 port=19 count=21 desc=port 19
+ip=10.90.89.83 port=23 count=101 desc=port 23
+ip=10.9.10.100 port=10 count=3480 desc=port 10
+ip=10.9.10.100 port=3 count=41 desc=Lenina96 port 3
+ip=10.90.89.57 port=3 count=7 desc=lenina 96 port 3
+ip=10.90.89.57 port=9 count=3383 desc=Lenina74 port 9
+ip=10.90.89.131 port=21 count=5 desc=port 21
+ip=10.90.89.131 port=22 count=2937 desc=port 22
+ip=10.90.89.81 port=1 count=4 desc=Apatova139 port 1
+ip=10.90.89.81 port=10 count=3428 desc=port 10
+ip=10.90.89.81 port=3 count=67 desc=Nahimova140 port 3
+ip=10.90.89.76 port=12 count=38 desc=port 12
+ip=10.90.89.76 port=2 count=120 desc=Lenina106 port 2
+ip=10.90.89.76 port=23 count=31 desc=port 23
+ip=10.90.89.76 port=3 count=43 desc=Stroiteley 92 port 3
+ip=10.90.90.91 port=1 count=3 desc=Lenina5_vnizu port 1
+ip=10.90.90.91 port=10 count=2 desc=port 10
+ip=10.90.90.91 port=2 count=4 desc=muzmar port 2
+ip=10.90.90.91 port=20 count=2 desc=port 20
+ip=10.90.90.91 port=4 count=2 desc=Stroitelei88 port 4
+ip=10.90.90.91 port=6 count=2 desc=oshlist port 6
+ip=10.15.6.100 port=1 count=10 desc=109 port 1
+ip=10.15.6.100 port=2 count=23 desc=port 2
+ip=10.15.6.100 port=3 count=21 desc=121 port 3
+ip=10.15.6.100 port=4 count=15 desc=port 4
+ip=10.90.90.42 port=10 count=608 desc=Lenina90 port 10
+ip=10.90.90.42 port=6 count=5 desc=port 6
+ip=10.44.8.100 port=14 count=12 desc=port 14
+ip=10.44.8.100 port=7 count=33 desc=port 7
+ip=10.34.2.100 port=10 count=3 desc=port 10
+ip=10.34.2.100 port=22 count=11 desc=adarka port 22
+ip=10.34.2.100 port=6 count=2 desc=bokat port 6
+ip=10.21.1.100 port=1 count=33 desc=port 1
+ip=10.21.1.100 port=12 count=4 desc=alatyrrekl port 12
+ip=10.21.1.100 port=13 count=4 desc=port 13
+ip=10.21.1.100 port=14 count=4 desc=port 14
+ip=10.50.6.100 port=10 count=6 desc=Metallurgov58 port 10
+ip=10.50.6.100 port=4 count=22 desc=switch port 4
+ip=10.50.6.100 port=9 count=39 desc=Metallurgov43 port 9
+ip=10.41.3.100 port=14 count=16 desc=port 14
+ip=10.41.3.100 port=20 count=8 desc=port 20
+ip=10.41.3.100 port=6 count=224 desc=port 6
+ip=10.37.1.100 port=22 count=49 desc=port 22
+ip=10.3.14.100 port=11 count=10 desc=port 11
+ip=10.3.14.100 port=5 count=32 desc=port 5
+ip=10.34.3.100 port=10 count=5 desc=port 10
+ip=10.34.3.100 port=11 count=3 desc=port 11
+ip=10.34.3.100 port=12 count=2 desc=port 12
+ip=10.34.3.100 port=13 count=33 desc=port 13
+ip=10.34.3.100 port=18 count=2 desc=port 18
+ip=10.34.3.100 port=20 count=2 desc=port 20
+ip=10.34.3.100 port=24 count=182 desc=Engelsa14 port 24
+ip=10.34.3.100 port=4 count=2 desc=port 4
+ip=10.90.89.92 port=1 count=30 desc=port 1
+ip=10.90.89.92 port=11 count=43 desc=port 11
+ip=10.90.89.92 port=15 count=19 desc=port 15
+ip=10.90.89.92 port=16 count=7 desc=port 16
+ip=10.90.89.92 port=17 count=17 desc=port 17
+ip=10.90.89.92 port=18 count=48 desc=port 18
+ip=10.90.89.92 port=20 count=60 desc=port 20
+ip=10.90.89.92 port=22 count=108 desc=Xmelnickogo14 port 22
+ip=10.90.89.92 port=23 count=50 desc=Xmelnickogo23a port 23
+ip=10.90.89.92 port=8 count=37 desc=port 8
+ip=10.90.89.135 port=11 count=22 desc=port 11
+ip=10.90.89.135 port=12 count=2931 desc=port 12
+ip=10.8.7.100 port=1 count=47 desc=port 1
+ip=10.8.7.100 port=11 count=2 desc=port 11
+ip=10.8.7.100 port=8 count=36 desc=port 8
+ip=10.8.7.100 port=9 count=4 desc=port 9
+ip=10.9.5.200 port=23 count=44 desc=Xmelnickogo23a port 23
+ip=10.9.5.200 port=4 count=42 desc=port 4
+ip=10.9.5.200 port=9 count=21 desc=Xmelnitskogo29 port 9
+ip=10.9.7.100 port=10 count=6 desc=port 10
+ip=10.9.7.100 port=15 count=12 desc=port 15
+ip=10.9.7.100 port=16 count=15 desc=port 16
+ip=10.9.7.100 port=17 count=7 desc=port 17
+ip=10.9.7.100 port=2 count=17 desc=Hmelnitskogo39 port 2
+ip=10.9.7.100 port=4 count=9 desc=port 4
+ip=10.9.7.100 port=9 count=4 desc=4 port 9
+ip=10.42.4.100 port=18 count=9 desc=port 18
+ip=10.40.10.100 port=13 count=2 desc=port 13
+ip=10.40.10.100 port=9 count=11 desc=port 9
+ip=10.90.91.50 port=3 count=14 desc=ams port 3
+ip=195.72.157.251 port=19 count=479 desc=Metallurgov79 port 19
+ip=195.72.157.251 port=2 count=22 desc=port 2
+ip=195.72.157.251 port=20 count=41 desc=Shevchenko91 port 20
+ip=195.72.157.251 port=21 count=8 desc=Artema144 port 21
+ip=195.72.157.251 port=22 count=41 desc=Artema82 port 22
+ip=195.72.157.251 port=23 count=46 desc=Metallurgov113 port 23
+ip=195.72.157.251 port=24 count=14 desc=Shevchenko64 port 24
+ip=195.72.157.251 port=8 count=44 desc=port 8
+ip=10.43.1.100 port=1 count=25 desc=metallurgov 102 port 1
+ip=10.43.1.100 port=2 count=10 desc=shevchenko93 port 2
+ip=10.43.1.100 port=7 count=3 desc=vitali port 7

@@ -1,0 +1,8 @@
+<?php
+include('building.inc.php');
+include('box.inc.php');
+include('optic_cable.inc.php');
+mysql_connect("195.72.157.253","krasnet","openfree");
+$a=new optic_cable(20,7);
+$a->show_opticbox();
+?>

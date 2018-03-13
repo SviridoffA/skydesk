@@ -1,0 +1,12 @@
+DES-1210-28/ME          6.02.019
+DES-1210-28/ME          6.07.B048
+DGS-1100-06/ME          1.00.015
+DGS-1100-10/ME V1.00.010
+DGS-3120-24SC Gigabit Ethernet Switch
+D-Link DES-3200-18 Fast Ethernet Switch
+Edge-Core FE L2 Switch ES3528M
+ES-2108-G
+GS-4012F
+Layer2+ Fast Ethernet Standalone Switch ES3510
+PLANET WGSD-1022 - 8+2G Managed Switch
+PLANET WGSW-2840

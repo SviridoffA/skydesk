@@ -1,0 +1,10 @@
+
+function write_log($username, $oldspeed, $speed) {
+
+  $ip=`set | grep USER | sed s'/USER=//'`;
+  $dogid=mysql_result(mysql("mvs","select `dogovor` from `customers` where `username` like '$username'"),0,"dogovor");
+  $query="insert into `logs` values('','$ip','$username','$dogid',now(),now(),'Speed changed from $oldspeed to $speed')";
+  $res=mysql("mvs",$query);
+  echo mysql_error();
+
+}

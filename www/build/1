@@ -1,0 +1,10 @@
+function users_last($build) {
+  mysql_connect("91.223.48.25","root","");
+  $query="select users_pi.__dom,max(users_last.last) as total  from users_pi,users_last where users_pi.__dom=52 and users_pi.uid=users_last.uid ";
+  $res=mysql("abills",$query);
+  $num=mysql_num_rows($res);
+  if ($num > 0) {
+    $last=mysql_result($res,0,"total");
+  }
+  return($last);
+}

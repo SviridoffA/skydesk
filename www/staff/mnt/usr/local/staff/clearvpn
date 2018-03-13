@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# USAGE:
+#   CLEAR-VPN-CISCO.sh username
+# http://www.opennet.ru/base/cisco/snmp_pptp_logout.txt.html
+
+ROUTER="195.72.157.254"
+ROCOMMUNITY="public"
+RWCOMMUNITY="private"
+SNMPWALK="/usr/local/bin/snmpwalk"
+SNMPSET="/usr/local/bin/snmpset"
+INTNAME=`/usr/bin/finger @$ROUTER | /usr/bin/awk '{print $1 " " $2}'|/usr/bin/grep $1"$" | /usr/bin/awk '{print $1}' | sed s/Vi/Virtual-Access/g`
+INTNUM=`$SNMPWALK -v 1 -c $ROCOMMUNITY -O n $ROUTER 1.3.6.1.2.1.2.2.1.2 | /usr/bin/grep $INTNAME"$" | awk '{print $1}' | sed s/.1.3.6.1.2.1.2.2.1.2.//g`
+$SNMPSET -v 1 -c $RWCOMMUNITY $ROUTER 1.3.6.1.2.1.2.2.1.7.$INTNUM i 2 > /dev/null 2>&1

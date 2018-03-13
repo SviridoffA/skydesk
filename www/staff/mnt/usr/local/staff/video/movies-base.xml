@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<PlayList>
+    <Category name="Test">
+	<Film name="mpg" path="/tmp/video/mpg" media="test.mpg" description="readme_test_mpg.txt"/>
+	<Film name="avi" path="/tmp/video/avi" media="test.avi" description="readme_test_avi.txt"/>
+	<Film name="avc" path="/tmp/video/avc" media="test.avc" description="readme_test_avc.txt"/>
+    </Category>
+    <Category name="Test Audio">
+	<Film name="mp3" path="/tmp/audio/mp3" media="test.mp3" description="readme_test_mp3.txt"/>
+	<Film name="wav" path="/tmp/audio/wav" media="test.wav" description="readme_test_wav.txt"/>
+    </Category>
+</PlayList>
+
+

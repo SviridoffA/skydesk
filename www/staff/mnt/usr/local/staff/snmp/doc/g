@@ -1,0 +1,785 @@
+# Created by 
+# /usr/local/bin/cfgmaker tenretni@10.90.89.57
+
+
+### Global Config Options
+
+#  for UNIX
+# WorkDir: /home/http/mrtg
+
+#  or for NT
+# WorkDir: c:\mrtgdata
+
+### Global Defaults
+
+#  to get bits instead of bytes and graphs growing to the right
+# Options[_]: growright, bits
+
+EnableIPv6: no
+
+######################################################################
+# System: abazyaka
+# Description: PLANET WGSD-1022 - 8+2G Managed Switch
+# Contact: 
+# Location: zdesya
+######################################################################
+
+
+### Interface 1 >> Descr: '' | Name: 'e1' | Ip: '' | Eth: '00-30-4f-62-20-c2' ###
+
+Target[10.90.89.57_1]: 1:tenretni@10.90.89.57:
+SetEnv[10.90.89.57_1]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+MaxBytes[10.90.89.57_1]: 12500000
+Title[10.90.89.57_1]: Traffic Analysis for 1 -- abazyaka
+PageTop[10.90.89.57_1]: <h1>Traffic Analysis for 1 -- abazyaka</h1>
+		<div id="sysdetails">
+			<table>
+				<tr>
+					<td>System:</td>
+					<td>abazyaka in zdesya</td>
+				</tr>
+				<tr>
+					<td>Maintainer:</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td>  </td>
+				</tr>
+				<tr>
+					<td>ifType:</td>
+					<td>ethernetCsmacd (6)</td>
+				</tr>
+				<tr>
+					<td>ifName:</td>
+					<td>e1</td>
+				</tr>
+				<tr>
+					<td>Max Speed:</td>
+					<td>12.5 MBytes/s</td>
+				</tr>
+
+			</table>
+		</div>
+
+
+### Interface 2 >> Descr: '' | Name: 'e2' | Ip: '' | Eth: '00-30-4f-62-20-c3' ###
+### The following interface is commented out because:
+### * it is operationally DOWN
+# 
+# Target[10.90.89.57_2]: 2:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_2]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_2]: 12500000
+# Title[10.90.89.57_2]: Traffic Analysis for 2 -- abazyaka
+# PageTop[10.90.89.57_2]: <h1>Traffic Analysis for 2 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>e2</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>12.5 MBytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 3 >> Descr: '' | Name: 'e3' | Ip: '' | Eth: '00-30-4f-62-20-c4' ###
+
+Target[10.90.89.57_3]: 3:tenretni@10.90.89.57:
+SetEnv[10.90.89.57_3]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+MaxBytes[10.90.89.57_3]: 12500000
+Title[10.90.89.57_3]: Traffic Analysis for 3 -- abazyaka
+PageTop[10.90.89.57_3]: <h1>Traffic Analysis for 3 -- abazyaka</h1>
+		<div id="sysdetails">
+			<table>
+				<tr>
+					<td>System:</td>
+					<td>abazyaka in zdesya</td>
+				</tr>
+				<tr>
+					<td>Maintainer:</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td>  </td>
+				</tr>
+				<tr>
+					<td>ifType:</td>
+					<td>ethernetCsmacd (6)</td>
+				</tr>
+				<tr>
+					<td>ifName:</td>
+					<td>e3</td>
+				</tr>
+				<tr>
+					<td>Max Speed:</td>
+					<td>12.5 MBytes/s</td>
+				</tr>
+
+			</table>
+		</div>
+
+
+### Interface 4 >> Descr: '' | Name: 'e4' | Ip: '' | Eth: '00-30-4f-62-20-c5' ###
+### The following interface is commented out because:
+### * it is operationally DOWN
+# 
+# Target[10.90.89.57_4]: 4:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_4]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_4]: 12500000
+# Title[10.90.89.57_4]: Traffic Analysis for 4 -- abazyaka
+# PageTop[10.90.89.57_4]: <h1>Traffic Analysis for 4 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>e4</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>12.5 MBytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 5 >> Descr: '' | Name: 'e5' | Ip: '' | Eth: '00-30-4f-62-20-c6' ###
+### The following interface is commented out because:
+### * it is administratively DOWN
+### * it is operationally DOWN
+# 
+# Target[10.90.89.57_5]: 5:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_5]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_5]: 12500000
+# Title[10.90.89.57_5]: Traffic Analysis for 5 -- abazyaka
+# PageTop[10.90.89.57_5]: <h1>Traffic Analysis for 5 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>e5</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>12.5 MBytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 6 >> Descr: '' | Name: 'e6' | Ip: '' | Eth: '00-30-4f-62-20-c7' ###
+### The following interface is commented out because:
+### * it is operationally DOWN
+# 
+# Target[10.90.89.57_6]: 6:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_6]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_6]: 12500000
+# Title[10.90.89.57_6]: Traffic Analysis for 6 -- abazyaka
+# PageTop[10.90.89.57_6]: <h1>Traffic Analysis for 6 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>e6</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>12.5 MBytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 7 >> Descr: '' | Name: 'e7' | Ip: '' | Eth: '00-30-4f-62-20-c8' ###
+### The following interface is commented out because:
+### * it is operationally DOWN
+# 
+# Target[10.90.89.57_7]: 7:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_7]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_7]: 12500000
+# Title[10.90.89.57_7]: Traffic Analysis for 7 -- abazyaka
+# PageTop[10.90.89.57_7]: <h1>Traffic Analysis for 7 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>e7</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>12.5 MBytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 8 >> Descr: '' | Name: 'e8' | Ip: '' | Eth: '00-30-4f-62-20-c9' ###
+
+Target[10.90.89.57_8]: 8:tenretni@10.90.89.57:
+SetEnv[10.90.89.57_8]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+MaxBytes[10.90.89.57_8]: 12500000
+Title[10.90.89.57_8]: Traffic Analysis for 8 -- abazyaka
+PageTop[10.90.89.57_8]: <h1>Traffic Analysis for 8 -- abazyaka</h1>
+		<div id="sysdetails">
+			<table>
+				<tr>
+					<td>System:</td>
+					<td>abazyaka in zdesya</td>
+				</tr>
+				<tr>
+					<td>Maintainer:</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td>  </td>
+				</tr>
+				<tr>
+					<td>ifType:</td>
+					<td>ethernetCsmacd (6)</td>
+				</tr>
+				<tr>
+					<td>ifName:</td>
+					<td>e8</td>
+				</tr>
+				<tr>
+					<td>Max Speed:</td>
+					<td>12.5 MBytes/s</td>
+				</tr>
+
+			</table>
+		</div>
+
+
+### Interface 9 >> Descr: '' | Name: 'g1' | Ip: '' | Eth: '00-30-4f-62-20-ca' ###
+
+Target[10.90.89.57_9]: 9:tenretni@10.90.89.57:
+SetEnv[10.90.89.57_9]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+MaxBytes[10.90.89.57_9]: 125000000
+Title[10.90.89.57_9]: Traffic Analysis for 9 -- abazyaka
+PageTop[10.90.89.57_9]: <h1>Traffic Analysis for 9 -- abazyaka</h1>
+		<div id="sysdetails">
+			<table>
+				<tr>
+					<td>System:</td>
+					<td>abazyaka in zdesya</td>
+				</tr>
+				<tr>
+					<td>Maintainer:</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td>  </td>
+				</tr>
+				<tr>
+					<td>ifType:</td>
+					<td>ethernetCsmacd (6)</td>
+				</tr>
+				<tr>
+					<td>ifName:</td>
+					<td>g1</td>
+				</tr>
+				<tr>
+					<td>Max Speed:</td>
+					<td>125.0 MBytes/s</td>
+				</tr>
+
+			</table>
+		</div>
+
+
+### Interface 10 >> Descr: '' | Name: 'g2' | Ip: '' | Eth: '00-30-4f-62-20-cb' ###
+### The following interface is commented out because:
+### * it is operationally DOWN
+# 
+# Target[10.90.89.57_10]: 10:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_10]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_10]: 125000000
+# Title[10.90.89.57_10]: Traffic Analysis for 10 -- abazyaka
+# PageTop[10.90.89.57_10]: <h1>Traffic Analysis for 10 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>g2</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>125.0 MBytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 1000 >> Descr: '' | Name: 'ch1' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_1000]: 1000:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_1000]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_1000]: 0
+# Title[10.90.89.57_1000]: Traffic Analysis for 1000 -- abazyaka
+# PageTop[10.90.89.57_1000]: <h1>Traffic Analysis for 1000 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>ch1</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 1001 >> Descr: '' | Name: 'ch2' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_1001]: 1001:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_1001]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_1001]: 0
+# Title[10.90.89.57_1001]: Traffic Analysis for 1001 -- abazyaka
+# PageTop[10.90.89.57_1001]: <h1>Traffic Analysis for 1001 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>ch2</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 1002 >> Descr: '' | Name: 'ch3' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_1002]: 1002:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_1002]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_1002]: 0
+# Title[10.90.89.57_1002]: Traffic Analysis for 1002 -- abazyaka
+# PageTop[10.90.89.57_1002]: <h1>Traffic Analysis for 1002 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>ch3</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 1003 >> Descr: '' | Name: 'ch4' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_1003]: 1003:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_1003]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_1003]: 0
+# Title[10.90.89.57_1003]: Traffic Analysis for 1003 -- abazyaka
+# PageTop[10.90.89.57_1003]: <h1>Traffic Analysis for 1003 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>ch4</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 1004 >> Descr: '' | Name: 'ch5' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_1004]: 1004:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_1004]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_1004]: 0
+# Title[10.90.89.57_1004]: Traffic Analysis for 1004 -- abazyaka
+# PageTop[10.90.89.57_1004]: <h1>Traffic Analysis for 1004 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>ch5</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 1005 >> Descr: '' | Name: 'ch6' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_1005]: 1005:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_1005]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_1005]: 0
+# Title[10.90.89.57_1005]: Traffic Analysis for 1005 -- abazyaka
+# PageTop[10.90.89.57_1005]: <h1>Traffic Analysis for 1005 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>ch6</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 1006 >> Descr: '' | Name: 'ch7' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_1006]: 1006:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_1006]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_1006]: 0
+# Title[10.90.89.57_1006]: Traffic Analysis for 1006 -- abazyaka
+# PageTop[10.90.89.57_1006]: <h1>Traffic Analysis for 1006 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>ch7</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 1007 >> Descr: '' | Name: 'ch8' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_1007]: 1007:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_1007]: MRTG_INT_IP="" MRTG_INT_DESCR=""
+# MaxBytes[10.90.89.57_1007]: 0
+# Title[10.90.89.57_1007]: Traffic Analysis for 1007 -- abazyaka
+# PageTop[10.90.89.57_1007]: <h1>Traffic Analysis for 1007 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>ethernetCsmacd (6)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>ch8</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+
+### Interface 100000 >> Descr: 'vlan' | Name: '1' | Ip: '10.90.89.57' | Eth: '' ###
+### The following interface is commented out because:
+### * has a speed of 0 which makes no sense
+# 
+# Target[10.90.89.57_100000]: 100000:tenretni@10.90.89.57:
+# SetEnv[10.90.89.57_100000]: MRTG_INT_IP="10.90.89.57" MRTG_INT_DESCR="vlan"
+# MaxBytes[10.90.89.57_100000]: 0
+# Title[10.90.89.57_100000]: Traffic Analysis for 100000 -- abazyaka
+# PageTop[10.90.89.57_100000]: <h1>Traffic Analysis for 100000 -- abazyaka</h1>
+# 		<div id="sysdetails">
+# 			<table>
+# 				<tr>
+# 					<td>System:</td>
+# 					<td>abazyaka in zdesya</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Maintainer:</td>
+# 					<td></td>
+# 				</tr>
+# 				<tr>
+# 					<td>Description:</td>
+# 					<td>vlan  </td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifType:</td>
+# 					<td>propVirtual (53)</td>
+# 				</tr>
+# 				<tr>
+# 					<td>ifName:</td>
+# 					<td>1</td>
+# 				</tr>
+# 				<tr>
+# 					<td>Max Speed:</td>
+# 					<td>0.0 Bytes/s</td>
+# 				</tr>
+# 
+# 				<tr>
+# 					<td>Ip:</td>
+# 					<td>10.90.89.57 ()</td>
+# 				</tr>
+# 
+# 			</table>
+# 		</div>
+
+

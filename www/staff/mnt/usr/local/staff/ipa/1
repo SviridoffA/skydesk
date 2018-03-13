@@ -1,0 +1,1 @@
+update data set bytes=0,endDate='2003.03.22 01:00:01',status=1 where service like 'adastra' and startDate='2003.03.22 00:00:00' and username like 'adastra'

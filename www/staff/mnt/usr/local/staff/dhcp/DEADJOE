@@ -1,0 +1,21 @@
+
+*** These modified files were found in JOE when it aborted on Sat Apr 19 16:08:29 2014
+*** JOE was aborted because the terminal closed
+
+*** File 'dhcp.php'
+<?php
+/*
+create table ippools(
+id int not null auto_increment,
+ip varchar(30),
+status int,
+mac varchar(30),
+circuitid varchar(40),
+agentid varchar(40),
+leasedtime datetime,
+leased datetime
+);
+
+*/
+$mac="00:00:00:22:22:24";
+$circuitid="

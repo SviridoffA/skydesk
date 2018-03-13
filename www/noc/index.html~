@@ -1,0 +1,44 @@
+<html>
+<body>
+<table>
+<tr>
+<td valign=top>
+<?php
+include('/usr/local/apache/servers/statmvs.mariupol.net/include/connect.inc');
+include('menu.php');
+
+?>
+</td><td>
+<?php
+$ip=$_GET["ip"];
+if (!empty($ip)) echo "ip=$ip<br>";
+if (!empty($ip)) {
+  $query="select * from switch where ip like '$ip'";
+  $res=mysql("mvs",$query);
+  $community=mysql_result($res,0,"community");
+  $port=snmpwalk($ip,$community,"IF-MIB::ifIndex");
+    $num=count($port);
+    for ($i=0;$i<$num;$i++) {
+      $index=$port[$i];
+      $index=ereg_replace("INTEGER: ","",$index);
+      $desc=snmpget($ip,$community,"ifAlias.$index");
+      $desc=ereg_replace("STRING: ","",$desc);
+      $p=$ip."_".$index;
+      echo "$p $desc<br>";
+      $file="/mrtg1/".$p."-day.png";
+      $tst="/usr/local/apache/htdocs".$file;
+      if (file_exists($tst)) {
+        echo "<a href=../mrtg1/$p.html><img src=$file></a><br>";
+      }
+    }
+} else {
+// echo "root";
+}
+
+?>
+
+</td>
+</tr>
+</table>
+</body>
+</html>

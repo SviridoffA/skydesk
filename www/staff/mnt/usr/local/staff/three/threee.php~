@@ -1,0 +1,55 @@
+
+<? 
+/* 
+   Работа с деревом по алгоритму Nested Sets. 
+   Подготовка таблицы к работе. 
+   Используется класс dbtree.php 
+   Взять его можно: http://dev.e-taller.net/dbtree/ 
+
+    --------------------- 
+    Author: Maxim Matykhin. 
+    mailto: max@webscript.ru 
+*/ 
+
+$table="categories"; // таблица категорий 
+$id_name="cid";     // имя поля первичного ключа 
+$field_names = array( // имена полей таблицы 
+   'left' => 'cleft', 
+   'right'=> 'cright', 
+   'level'=> 'clevel', 
+); 
+
+require_once "cd.php"; 
+require_once "dbtree.php"; 
+
+$dbh=new CDataBase("ьмы", "localhost", "root", "#fdnjvfn45"); 
+$Tree = new CDBTree($dbh, $table, $id_name, $field_names); 
+// создаем "корневую" запись (см. пояснения к статье) 
+$id=$Tree->clear(array("title"=>"Ленина 74")); 
+
+$level_2=array(); 
+$level_2[0]=$Tree->insert($id,array("title"=>"пр.Ленина 72")); 
+$level_2[1]=$Tree->insert($id,array("title"=>"ул.Казанцева 22а")); 
+$level_2[2]=$Tree->insert($id,array("title"=>"пр.Ленина 87")); 
+$level_2[3]=$Tree->insert($id,array("title"=>"пр.Металлургов 97")); 
+$level_2[4]=$Tree->insert($id,array("title"=>"пр.Ленина 9")); 
+
+// теперь создадим несколько записей третьего уровня 
+$level_3=array(); 
+$level_3[0]=$Tree->insert($level_2[0],array("title"=>"пр.Ленина 81")); 
+
+$level_3[3]=$Tree->insert($level_2[1],array("title"=>"пр.Нахимова 206")); 
+
+$level_3[4]=$Tree->insert($level_2[2],array("title"=>"пр.Ленина 87а")); 
+
+$level_3[6]=$Tree->insert($level_2[3],array("title"=>"б.Шевченко 70")); 
+$level_3[7]=$Tree->insert($level_2[3],array("title"=>"пр.Металлургов 95")); 
+                                               
+// и для некоторых сделаем четвертый уровень 
+$Tree->insert($level_3[0],array("title"=>"ул.Казанцева 19а")); 
+$Tree->insert($level_3[0],array("title"=>"пр.Ленина 75б")); 
+$Tree->insert($level_3[3],array("title"=>"пр.Нахимова 204")); 
+$Tree->insert($level_3[6],array("title"=>"пр.Металлургов 91")); 
+$Tree->insert($level_3[6],array("title"=>"б.Шевченко 68")); 
+echo "Таблица заполнена."; 
+?> 

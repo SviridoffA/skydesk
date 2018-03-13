@@ -1,0 +1,55 @@
+<?php
+class building {
+  public $id="0";
+  public $database="krasnet";
+  var $table="points";
+  public $address="";
+  public $building="";
+  public $idconnect="";
+  
+
+  public function add_building($address,$building) {
+    $query="insert into $this->table (address,building) values('$address','$building')";
+    $res=mysql($this->database,$query);
+  }
+
+  public function delete_building() {
+    $query="delete from $this->table where id=$this->id";
+    $res=mysql($this->database,$query);
+  }
+
+  public function show_building() {
+    echo $this->address;
+    echo $this->building;
+  }
+
+  public function get_building($id) {
+    $query="select * from $this->table where id=$id";
+    $res=mysql($this->database,$query);
+    $address=mysql_result($res,0,"address");
+    $address=$address." ".mysql_result($res,0,"building");
+  }
+
+  public function modify_building($id,$address,$building,$vlan,$network,$connected,$idconnect,$type,$totalcustomers) {
+    $query="update $this->table set address='$address',building='$building',vlan='$vlan',connected='$connected' where id=$this->id";
+    $res=mysql($this->database,$query);
+  }
+ 
+  public function show_tree_building() {
+  }
+
+  public function __construct($id) {
+    if (empty($id)) {
+      $query="select * from $this->table where id=$this->id";
+    } else {
+      $query="select * from $this->table where id=$id";
+    }
+    $res=mysql($this->database,$query);
+    $this->address=mysql_result($res,0,"address");
+    $this->building=mysql_result($res,0,"building");
+    $this->idconnect=mysql_result($res,0,"idconnect");
+    $this->show_building();
+  }
+
+}
+?>

@@ -1,0 +1,33 @@
+  preg_match("/([\d]+).([\d]+).([\d]+).([\d]+).([\d]+).([\d]+) = Hex-STRING: ([\d\w]+) ([\d\w]+) ([\d\w]+) ([\d\w]+) ([\d\w]+) ([\d\w]+)/",$str,$mem,PREG_OFFSET_CAPTURE,0);
+//  var_dump($mem);
+  $ips=$mem[3][0].".".$mem[4][0].".".$mem[5][0].".".$mem[6][0];
+  $mac1=sprintf("%s",strtolower($mem[7][0]));
+  if (strlen($mac1) == 1) { 
+    $s1="0".$mac1;
+    $mac1=$s1;
+  }
+  $mac2=sprintf("%+02s",strtolower($mem[8][0]));
+  if (strlen($mac2) == 1) { 
+    $s1="0".$mac2;
+    $mac2=$s1;
+  }
+  $mac3=sprintf("%+02s",strtolower($mem[9][0]));
+  if (strlen($mac3) == 1) { 
+    $s1="0".$mac3;
+    $mac3=$s1;
+  }
+  $mac4=sprintf("%+02s",strtolower($mem[10][0]));
+  if (strlen($mac4) == 1) { 
+    $s1="0".$mac4;
+    $mac4=$s1;
+  }
+  $mac5=sprintf("%+02s",strtolower($mem[11][0]));
+  if (strlen($mac5) == 1) { 
+    $s1="0".$mac5;
+    $mac5=$s1;
+  }
+  $mac6=sprintf("%+02s",strtolower($mem[12][0]));
+  if (strlen($mac6) == 1) { 
+    $s1="0".$mac6;
+    $mac6=$s1;
+  }
